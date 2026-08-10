@@ -38,7 +38,7 @@ const images = [
 
 const Gallery = () => {
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="py-24">
       <Container>
         {/* Header */}
         <motion.div
@@ -216,8 +216,9 @@ const Gallery = () => {
                   </p>
                 </div>
 
+                {/* Director CTA — OLD NUMBER INTENTIONALLY KEPT */}
                 <a
-                  href="https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20DE-INES%20Physiotherapy."
+                  href="https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20the%20Director%20of%20DE-INES%20Physiotherapy%20about%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-8 inline-flex rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white transition hover:bg-blue-800"
@@ -249,8 +250,9 @@ const Gallery = () => {
             toward better movement, strength, and confidence.
           </p>
 
+          {/* Booking CTA — NEW WHATSAPP NUMBER */}
           <a
-            href="https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20DE-INES%20Physiotherapy."
+            href="https://wa.me/2348036125717?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20DE-INES%20Physiotherapy."
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-xl bg-white px-8 py-4 font-semibold text-blue-700 transition hover:bg-slate-100"
