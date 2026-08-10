@@ -1,5 +1,5 @@
 /** WhatsApp booking link for DE-INES Physiotherapy */
-export const WHATSAPP_NUMBER = "2348174636276";
+export const WHATSAPP_NUMBER = "2348036125717";
 
 export const WHATSAPP_BOOK =
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

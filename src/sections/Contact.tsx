@@ -1,17 +1,36 @@
 import Container from "../components/Container";
-import { MapPin, Phone } from "lucide-react";
+import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
-const MAPS_QUERY =
-  "No 41 Oko-Central Road, Off Airport Road, By NEPA Office, Benin City, Edo State, Nigeria";
-const MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAPS_QUERY)}&output=embed`;
-const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`;
+const HEAD_OFFICE =
+  "41, Oko Central Road, Off Airport Road, Benin City, Edo State, Nigeria";
+
+const BRANCH_OFFICE =
+  "35 Egun Street, Off Orubor Road, Agbor, Delta State, Nigeria";
+
+const MAPS_QUERY = HEAD_OFFICE;
+
+const MAPS_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(
+  MAPS_QUERY
+)}&output=embed`;
+
+const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  MAPS_QUERY
+)}`;
 
 const contactInfo = [
   {
-    title: "Visit Our Clinic",
-    value:
-      "No 41 Oko-Central Road, Off Airport Road, By NEPA Office, Benin City, Edo State.",
+    title: "Head Office",
+    value: HEAD_OFFICE,
     href: MAPS_LINK,
+    icon: MapPin,
+  },
+  {
+    title: "Branch Office",
+    value: BRANCH_OFFICE,
+    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      BRANCH_OFFICE
+    )}`,
     icon: MapPin,
   },
   {
@@ -22,60 +41,28 @@ const contactInfo = [
   },
   {
     title: "WhatsApp",
-    value: "0817 463 6276",
-    href: "https://wa.me/2348174636276",
-    icon: Phone,
+    value: "0803 612 5717",
+    href: WHATSAPP_BOOK,
+    icon: MessageCircle,
   },
   {
-    title: "Facebook",
-    value: "Deinesphysiotherapy",
-    href: "https://facebook.com/Deinesphysiotherapy",
-    icon: () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Instagram",
-    value: "de_inesphysiotherapy",
-    href: "https://instagram.com/de_inesphysiotherapy",
-    icon: () => (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-        <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-      </svg>
-    ),
+    title: "Email",
+    value: "consultdeinesphysiotherapy@gmail.com",
+    href: "mailto:consultdeinesphysiotherapy@gmail.com",
+    icon: Mail,
   },
 ];
 
 const Contact = () => {
   return (
-    <section id="contact" className="bg-slate-50 py-24">
+    <section
+      id="contact"
+      className="bg-slate-50 py-24"
+    >
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+        {/* Header */}
+        <div className="max-w-3xl">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
             Contact Us
           </span>
 
@@ -84,40 +71,46 @@ const Contact = () => {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Ready to begin your recovery journey? Contact DE-INES Physiotherapy
-            & Sports Injury Consult to book an appointment, inquire about our
-            services, or enroll in our Home Care Assistant Training program.
+            Ready to begin your recovery journey? Contact DE-INES
+            Physiotherapy & Sports Injury Consult to book an appointment,
+            inquire about our services, or enroll in our Home Care Assistant
+            Training program.
           </p>
         </div>
 
         <div className="mt-20 grid gap-12 lg:grid-cols-2">
-          {/* Contact cards */}
+          {/* Contact Information */}
           <div className="space-y-4">
             {contactInfo.map((item) => {
               const Icon = item.icon;
+
               return (
                 <a
                   key={item.title}
                   href={item.href}
                   target={
-                    item.href?.startsWith("http") ? "_blank" : undefined
+                    item.href.startsWith("http") ? "_blank" : undefined
                   }
                   rel={
-                    item.href?.startsWith("http")
+                    item.href.startsWith("http")
                       ? "noopener noreferrer"
                       : undefined
                   }
                   className="block"
                 >
-                  <div className="flex items-center gap-5 rounded-2xl bg-white p-6 shadow-md transition hover:shadow-lg">
+                  <div className="flex items-start gap-5 rounded-2xl bg-white p-6 shadow-md transition hover:-translate-y-1 hover:shadow-lg">
                     <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700">
                       <Icon className="h-7 w-7" />
                     </div>
+
                     <div>
                       <h3 className="font-semibold text-slate-900">
                         {item.title}
                       </h3>
-                      <p className="mt-1 text-slate-600">{item.value}</p>
+
+                      <p className="mt-1 leading-7 text-slate-600">
+                        {item.value}
+                      </p>
                     </div>
                   </div>
                 </a>
@@ -130,35 +123,70 @@ const Contact = () => {
             className="rounded-3xl bg-white p-8 shadow-lg"
             onSubmit={(e) => {
               e.preventDefault();
+
+              const form = e.currentTarget;
+
+              const name = (
+                form.elements.namedItem("name") as HTMLInputElement
+              ).value;
+
+              const phone = (
+                form.elements.namedItem("phone") as HTMLInputElement
+              ).value;
+
+              const message = (
+                form.elements.namedItem("message") as HTMLTextAreaElement
+              ).value;
+
+              const whatsappMessage = encodeURIComponent(
+                `Hello, I would like to book an appointment at DE-INES Physiotherapy.
+
+Name: ${name}
+Phone: ${phone}
+
+Message:
+${message}`
+              );
+
               window.open(
-                "https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20DE-INES%20Physiotherapy.",
-                "_blank",
-                "noopener,noreferrer"
+                `https://wa.me/2348036125717?text=${whatsappMessage}`,
+                "_blank"
               );
             }}
           >
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-slate-900">
+                Send Us a Message
+              </h3>
+
+              <p className="mt-2 text-slate-600">
+                Fill in your details and continue the conversation on
+                WhatsApp.
+              </p>
+            </div>
+
             <div className="grid gap-5">
               <input
+                name="name"
                 type="text"
                 placeholder="Full Name"
+                required
                 className="rounded-xl border border-slate-200 px-5 py-4 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
               />
 
               <input
-                type="email"
-                placeholder="Email Address"
-                className="rounded-xl border border-slate-200 px-5 py-4 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
-              />
-
-              <input
+                name="phone"
                 type="tel"
                 placeholder="Phone Number"
+                required
                 className="rounded-xl border border-slate-200 px-5 py-4 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
               />
 
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Tell us how we can help..."
+                required
                 className="rounded-xl border border-slate-200 px-5 py-4 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-100"
               />
 
@@ -174,18 +202,19 @@ const Contact = () => {
 
         {/* Google Maps */}
         <div className="mt-16 overflow-hidden rounded-3xl shadow-xl">
-          <div className="border-b border-slate-200 bg-white px-6 py-4">
+          <div className="border-b border-slate-200 bg-white px-6 py-5">
             <h3 className="text-lg font-semibold text-slate-900">
-              Find Us on the Map
+              Find Our Head Office
             </h3>
-            <p className="mt-1 text-sm text-slate-500">
-              No 41 Oko-Central Road, Off Airport Road, By NEPA Office, Benin
-              City
+
+            <p className="mt-1 text-sm leading-6 text-slate-500">
+              {HEAD_OFFICE}
             </p>
           </div>
+
           <div className="relative aspect-[16/9] w-full bg-slate-100 sm:aspect-[21/9]">
             <iframe
-              title="DE-INES Physiotherapy location"
+              title="DE-INES Physiotherapy Head Office location"
               src={MAPS_EMBED}
               className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
@@ -193,6 +222,7 @@ const Contact = () => {
               allowFullScreen
             />
           </div>
+
           <div className="bg-white px-6 py-4 text-center">
             <a
               href={MAPS_LINK}
@@ -201,7 +231,7 @@ const Contact = () => {
               className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800"
             >
               <MapPin className="h-4 w-4" />
-              Open in Google Maps
+              Open Head Office in Google Maps
             </a>
           </div>
         </div>
