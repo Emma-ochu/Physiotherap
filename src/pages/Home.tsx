@@ -1,7 +1,6 @@
 import Hero from "../sections/Hero";
 import TrustBar from "../sections/TrustBar";
-import About from "../sections/About";
-import Services from "../sections/Services";
+import WhatWeTreat from "../sections/WhatWeTreat";
 import Testimonials from "../sections/Testimonial";
 import Contact from "../sections/Contact";
 
@@ -9,8 +8,7 @@ const Home = () => (
   <>
     <Hero />
     <TrustBar />
-    <About />
-    <Services />
+    <WhatWeTreat />
     <Testimonials />
     <Contact />
   </>

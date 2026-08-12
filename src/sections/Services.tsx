@@ -1,137 +1,222 @@
-import {
-  Activity,
-  Brain,
-  Bone,
-  HeartPulse,
-  Dumbbell,
-  Accessibility,
-} from "lucide-react";
-
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Container from "../components/Container";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 const services = [
   {
-    title: "Sports Injury & Rehabilitation",
-    description:
-      "Structured rehabilitation for sports injuries and movement-related conditions, from initial recovery through return to activity.",
-    conditions:
-      "ACL injuries • Ankle sprains • Running injuries • Muscle strains • Tendon injuries • Shoulder injuries",
-    icon: Dumbbell,
+    title: "Musculoskeletal Physiotherapy",
+    intro:
+      "Assessment and treatment for pain, stiffness, movement restrictions, and everyday musculoskeletal conditions.",
+    conditions: [
+      "Back and neck pain",
+      "Shoulder pain",
+      "Knee and ankle problems",
+      "Muscle and tendon injuries",
+      "Arthritis and joint pain",
+      "Headaches and migraines",
+    ],
   },
   {
-    title: "Musculoskeletal & Pain Care",
-    description:
-      "Personalized physiotherapy for pain, stiffness, mobility limitations, and everyday musculoskeletal conditions.",
-    conditions:
-      "Back pain • Neck pain • Sciatica • Arthritis • Persistent pain • Headaches & migraines",
-    icon: Activity,
+    title: "Sports Physiotherapy",
+    intro:
+      "Specialist physiotherapy for athletes and active people, helping you recover from injury and return safely to sport.",
+    conditions: [
+      "Sports injuries",
+      "Muscle strains",
+      "Ligament injuries",
+      "Running injuries",
+      "Ankle sprains",
+      "Return-to-sport rehabilitation",
+    ],
+  },
+  {
+    title: "Women's & Men's Pelvic Health",
+    intro:
+      "Physiotherapy support for pelvic health, pregnancy, postpartum recovery, and related conditions.",
+    conditions: [
+      "Pregnancy support",
+      "Postpartum rehabilitation",
+      "Pelvic floor dysfunction",
+      "Incontinence",
+      "Pelvic pain",
+      "Men's pelvic health",
+    ],
+  },
+  {
+    title: "Orthopaedic & Post-Surgical Rehabilitation",
+    intro:
+      "Structured rehabilitation following surgery, fractures, joint injuries, and orthopaedic procedures.",
+    conditions: [
+      "Knee replacement",
+      "Hip replacement",
+      "ACL reconstruction",
+      "Fracture rehabilitation",
+      "Shoulder repairs",
+      "Post-operative rehabilitation",
+    ],
   },
   {
     title: "Neurological Rehabilitation",
-    description:
-      "Specialized rehabilitation designed to improve movement, strength, balance, coordination, and independence.",
-    conditions:
-      "Stroke • Brain injury • Spinal cord injury • Nerve injuries • Post-concussion rehabilitation",
-    icon: Brain,
+    intro:
+      "Individualised rehabilitation designed to improve movement, strength, balance, coordination, and independence.",
+    conditions: [
+      "Stroke rehabilitation",
+      "Brain injury",
+      "Spinal cord conditions",
+      "Nerve injuries",
+      "Balance problems",
+      "Mobility rehabilitation",
+    ],
   },
   {
-    title: "Orthopaedic & Post-Surgical Rehab",
-    description:
-      "Progressive rehabilitation following injuries, fractures, orthopaedic procedures, and other surgeries.",
-    conditions:
-      "ACL reconstruction • Knee replacement • Hip replacement • Fractures • Shoulder repairs • Arthroscopic procedures",
-    icon: Bone,
-  },
-  {
-    title: "Women's Health & Pelvic Care",
-    description:
-      "Physiotherapy support through pregnancy, postpartum recovery, and pelvic-floor related conditions.",
-    conditions:
-      "Pregnancy exercise • Postpartum rehabilitation • Pelvic floor dysfunction • Incontinence",
-    icon: HeartPulse,
-  },
-  {
-    title: "Specialist & Functional Rehabilitation",
-    description:
-      "Rehabilitation support for complex conditions affecting mobility, physical function, and quality of life.",
-    conditions:
-      "Amputation rehabilitation • Post-burn contractures • Club-foot management • Falls prevention • Mobility training",
-    icon: Accessibility,
+    title: "Functional & Specialist Rehabilitation",
+    intro:
+      "Rehabilitation for complex conditions affecting mobility, physical function, independence, and quality of life.",
+    conditions: [
+      "Amputation rehabilitation",
+      "Falls prevention",
+      "Mobility training",
+      "Post-burn contractures",
+      "Club-foot management",
+      "Functional rehabilitation",
+    ],
   },
 ];
 
 const Services = () => {
   return (
-    <section id="services" className="bg-slate-50 py-24 md:py-32">
-      <Container>
-        {/* Header */}
-        <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
-            Our Expertise
-          </span>
+    <main className="bg-white">
+      {/* Page Hero */}
+      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+        <div className="absolute inset-0 bg-blue-950/30" />
 
-          <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-            Comprehensive Physiotherapy & Rehabilitation Care
-          </h2>
+        <Container>
+          <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
+              Clinical Physiotherapy Services
+            </p>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
-            DE-INES provides professional physiotherapy and rehabilitation
-            services across a broad range of sports, musculoskeletal,
-            neurological, orthopaedic, and functional conditions.
-          </p>
-        </div>
+            <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+              Treatment, Rehabilitation,
+              <br className="hidden md:block" />
+              Exercise & Education
+            </h1>
 
-        {/* Service Cards */}
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => {
-            const Icon = service.icon;
+            <p className="mx-auto mt-7 max-w-3xl text-base leading-7 text-white/80 md:text-lg md:leading-8">
+              Professional physiotherapy care focused on helping you reduce
+              pain, restore movement, build strength, and return to the
+              activities that matter to you.
+            </p>
 
-            return (
+            <a
+              href={WHATSAPP_BOOK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-9 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800"
+            >
+              Contact Us
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700">
+              Our Services
+            </span>
+
+            <h2 className="mt-6 text-3xl font-bold text-slate-900 md:text-5xl">
+              Physiotherapy Designed Around You
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Every person and every condition is different. Our physiotherapy
+              services are designed around your symptoms, goals, lifestyle,
+              physical needs, and stage of recovery.
+            </p>
+          </div>
+
+          {/* Service Packages */}
+          <div className="mt-16 space-y-8">
+            {services.map((service, index) => (
               <article
                 key={service.title}
-                className="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-8 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl"
+                className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50"
               >
-                {/* Icon */}
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 transition duration-300 group-hover:bg-blue-700">
-                  <Icon className="h-7 w-7 text-blue-700 transition duration-300 group-hover:text-white" />
-                </div>
+                <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
+                  {/* Service heading */}
+                  <div className="bg-slate-950 p-8 text-white md:p-10">
+                    <span className="text-sm font-bold text-blue-300">
+                      0{index + 1}
+                    </span>
 
-                {/* Title */}
-                <h3 className="mt-7 text-2xl font-bold text-slate-900">
-                  {service.title}
-                </h3>
+                    <h3 className="mt-5 text-2xl font-bold leading-tight md:text-3xl">
+                      {service.title}
+                    </h3>
 
-                {/* Description */}
-                <p className="mt-4 leading-7 text-slate-600">
-                  {service.description}
-                </p>
+                    <p className="mt-5 leading-7 text-white/70">
+                      {service.intro}
+                    </p>
 
-                {/* Conditions */}
-                <div className="mt-6 border-t border-slate-100 pt-5">
-                  <p className="text-sm font-medium leading-6 text-slate-500">
-                    {service.conditions}
-                  </p>
+                    <a
+                      href={WHATSAPP_BOOK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-8 inline-flex items-center gap-2 font-semibold text-blue-300 transition hover:text-blue-200"
+                    >
+                      Discuss This Service
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+
+                  {/* Conditions */}
+                  <div className="p-8 md:p-10">
+                    <p className="text-sm font-bold uppercase tracking-wider text-slate-500">
+                      Conditions & Areas We Treat
+                    </p>
+
+                    <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                      {service.conditions.map((condition) => (
+                        <div
+                          key={condition}
+                          className="flex items-start gap-3"
+                        >
+                          <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-blue-700" />
+
+                          <span className="font-medium text-slate-700">
+                            {condition}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </article>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-        {/* Broader Care Statement */}
-        <div className="mt-16 rounded-3xl border border-slate-200 bg-white p-8 md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">
-                Care Across Every Stage of Recovery
-              </h3>
+      {/* Recovery CTA */}
+      <section className="bg-blue-700 py-20 md:py-24">
+        <Container>
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+            <div className="max-w-3xl text-white">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-200">
+                Start Your Recovery
+              </p>
 
-              <p className="mt-4 max-w-4xl text-lg leading-8 text-slate-600">
-                Our physiotherapy approach supports people of different ages
-                and needs, from children and young adults to working
-                professionals, athletes, and older adults. Treatment is
-                tailored to the individual's condition, goals, and stage of
-                recovery.
+              <h2 className="mt-4 text-3xl font-bold md:text-4xl">
+                Not sure which service is right for you?
+              </h2>
+
+              <p className="mt-4 text-lg leading-8 text-white/80">
+                Speak with the DE-INES team about your condition and goals.
+                We can help you understand the most appropriate next step.
               </p>
             </div>
 
@@ -139,35 +224,15 @@ const Services = () => {
               href={WHATSAPP_BOOK}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-xl bg-blue-700 px-7 py-4 font-semibold text-white transition hover:bg-blue-800"
+              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:-translate-y-0.5 hover:bg-slate-100"
             >
-              Discuss Your Needs
+              Book an Appointment
+              <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-        </div>
-
-        {/* Final CTA */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">
-            Not Sure Which Service You Need?
-          </h3>
-
-          <p className="mx-auto mt-3 max-w-2xl text-lg text-slate-600">
-            Speak with the DE-INES team about your condition and find out
-            which physiotherapy approach may be appropriate for you.
-          </p>
-
-          <a
-            href={WHATSAPP_BOOK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 inline-flex rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white shadow-lg shadow-blue-700/20 transition hover:bg-blue-800"
-          >
-            Book an Appointment
-          </a>
-        </div>
-      </Container>
-    </section>
+        </Container>
+      </section>
+    </main>
   );
 };
 
