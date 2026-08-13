@@ -1,170 +1,151 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Container from "../components/Container";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 const values = [
   {
-    title: "Patient First",
-    text: "We listen carefully to your story, understand what matters to you, and build your care around your goals — not just your diagnosis.",
+    title: "Compassion",
+    text: "We respect your decision in choosing us as your care provider. We listen to your story and make sure every visit is friendly, efficient and effective — and we bring that same respect into how we treat each other as a team.",
   },
   {
-    title: "Evidence-Based Care",
-    text: "We use modern physiotherapy approaches supported by clinical knowledge and tailor them to your individual needs and lifestyle.",
+    title: "Collaboration",
+    text: "We work with you toward goals that are realistic and achievable. We're committed to meeting your expectations and equipping you to look after yourself. The best outcomes come from genuine teamwork.",
   },
   {
-    title: "Recovery That Lasts",
-    text: "Our goal is not only to reduce symptoms, but to help you regain confidence, strength, function, and independence.",
+    title: "Excellence",
+    text: "We stay current with evidence-based physiotherapy practice and invest in our team, our facilities, and our commitment to your lasting recovery. We believe being part of your progress matters.",
   },
 ];
 
+const painPoints = [
+  "…what's wrong, or if it's serious?",
+  "…if and how we can help?",
+  "…how long recovery might take?",
+  "…when we can get you in?",
+  "…how much it will cost?",
+];
+
 const reasons = [
-  "Thorough assessment before treatment begins",
-  "Personalised treatment plans built around your goals",
-  "Clear, honest communication throughout recovery",
-  "Evidence-based physiotherapy care",
-  "Progressive rehabilitation and practical exercise",
-  "Education to help prevent future problems",
-  "Support focused on the activities that matter to you",
+  "Open and honest communication from the get-go, including direct feedback on your progress",
+  "We see recoveries through — not just a couple of sessions and \"see how you go\"",
+  "Flexible, generous appointment slots that work around you",
+  "A modern, welcoming, custom-fitted clinic",
+  "A committed local team who know the community they serve",
+  "Trusted by patients for thorough, evidence-based care",
 ];
 
 const approach = [
   "We actively listen to your story",
-  "We provide a thorough clinical assessment",
-  "We explain our findings clearly",
-  "We develop a treatment plan around your goals",
-  "We use appropriate evidence-based treatment",
-  "We prescribe exercises and practical strategies",
-  "We monitor your progress and adjust your care",
-  "We help you rebuild confidence in your recovery",
+  "We provide a thorough, expert assessment",
+  "We explain your diagnosis clearly",
+  "We use modern, effective treatment backed by evidence",
+  "We give clear advice and the right exercises for you",
+  "We collaborate with you toward realistic, shared goals",
+  "We help restore your confidence in your body",
+  "We educate you in strategies to prevent it happening again",
 ];
 
 const team = [
   {
-    name: "Dr. Example Name",
-    role: "Principal Physiotherapist & Director",
-    credentials:
-      "B.Sc. Physiotherapy | M.Sc. Physiotherapy | Professional Membership",
-    image: "/images/director-clinic.png",
-    bio: "Dr. Example Name is the principal physiotherapist and director of DE-INES Physiotherapy and Sports Consults. With extensive experience in physiotherapy and rehabilitation, they are passionate about helping people return to the activities and lifestyles that matter most to them.",
-    secondBio:
-      "Their clinical interests include musculoskeletal rehabilitation, sports injuries, pain management, and functional recovery. They believe every patient deserves to understand their condition and have an active role in their recovery.",
-  },
-  {
-    name: "Example Physiotherapist",
-    role: "Senior Physiotherapist",
+    name: "Clinical Lead / Founder",
+    role: "Physiotherapist & Director",
     credentials: "B.Sc. Physiotherapy | Professional Membership",
-    image: "/images/staff-single.png",
-    bio: "Example Physiotherapist is a dedicated member of the DE-INES clinical team with a strong interest in helping patients overcome pain, injury, and movement limitations.",
+    bio: "Our clinical director brings years of experience in physiotherapy and rehabilitation. Passionate about evidence-based care, they've built DE-INES on a foundation of thorough assessment, honest communication, and genuine patient-centred care.",
     secondBio:
-      "Their approach combines hands-on treatment, therapeutic exercise, patient education, and progressive rehabilitation to help patients return to the activities they value.",
+      "Outside the clinic, they're driven by the same belief that shapes every session here: that recovery is a partnership, not something done to you.",
   },
   {
-    name: "Example Team Member",
-    role: "Practice Manager",
-    credentials: "",
-    image: "/images/team-indoor.png",
-    bio: "Example Team Member helps create a welcoming and supportive experience for patients from their first interaction with DE-INES.",
+    name: "Senior Physiotherapist",
+    role: "Specialised Therapist",
+    credentials: "B.Sc. Physiotherapy | Professional Membership",
+    bio: "A dedicated clinician with deep expertise in helping patients overcome movement limitations and chronic pain. They believe every patient deserves to understand their condition and have an active role in recovery.",
     secondBio:
-      "They play an important role in keeping the clinic organised and ensuring patients receive the information and support they need throughout their experience.",
+      "Their focus areas include women's health, post-surgical rehab, and sports performance — always with an emphasis on long-term, independent wellbeing.",
+  },
+  {
+    name: "Therapist",
+    role: "Clinical Team",
+    credentials: "B.Sc. Physiotherapy | Professional Membership",
+    bio: "Committed to delivering compassionate, evidence-based care. They work closely with each patient to develop realistic recovery goals and celebrate the progress made along the way.",
+    secondBio:
+      "Areas of interest include orthopaedic care, neurological rehab, and functional training for everyday life.",
   },
 ];
 
 const About = () => {
   return (
-    <section id="about" className="bg-white">
-      {/* HERO */}
-      <section className="relative min-h-[620px] overflow-hidden bg-slate-950">
-        <img
-          src="/images/team-outside.png"
-          alt="DE-INES Physiotherapy Team"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-slate-950/70" />
-
-        <Container>
-          <div className="relative z-10 flex min-h-[620px] items-center justify-center py-24 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="max-w-4xl text-white"
-            >
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200">
-                About DE-INES Physiotherapy
-              </p>
-
-              <h1 className="mt-5 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-                Professional care.
-                <br />
-                <span className="text-blue-300">Personal recovery.</span>
-              </h1>
-
-              <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-                We provide personalised physiotherapy and rehabilitation care
-                designed to help you move better, feel stronger, and return to
-                the things that matter most to you.
-              </p>
-
-              <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a
-                  href="#why-choose-us"
-                  className="rounded-full bg-blue-700 px-7 py-4 font-bold text-white transition hover:bg-blue-800"
-                >
-                  Why Choose Us
-                </a>
-                <a
-                  href={WHATSAPP_BOOK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-white/40 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
-                >
-                  Book Appointment
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
-
-      {/* WHO WE ARE */}
-      <section className="bg-white py-20 md:py-28">
+    <main className="bg-white">
+      {/* ===== HERO ===== */}
+      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+        <div className="absolute inset-0 bg-blue-950/30" />
         <Container>
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-4xl text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="relative z-10 mx-auto max-w-4xl text-white"
           >
-            <span className="text-sm font-bold uppercase tracking-widest text-blue-700">
-              Who We Are
-            </span>
-
-            <h2 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
-              Physiotherapy built around{" "}
-              <span className="text-blue-700">people</span>, not just conditions.
-            </h2>
-
-            <p className="mt-6 text-lg leading-8 text-slate-600">
-              DE-INES Physiotherapy and Sports Consults provides professional
-              physiotherapy and rehabilitation services for people experiencing
-              pain, injury, reduced mobility, neurological conditions, and other
-              physical challenges.
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
+              Our Story
             </p>
-
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              We believe good physiotherapy begins with listening. By
-              understanding your story, your goals, and the things you want to
-              get back to doing, we create a treatment approach that is
-              meaningful to you.
+            <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
+              About DE-INES
+            </h1>
+            <p className="mt-8 text-lg leading-8 text-white/80">
+              DE-INES Physiotherapy was founded on a simple belief: that
+              everyone deserves access to high-quality, compassionate
+              physiotherapy care. We combine thorough assessment,
+              evidence-based treatment, and genuine partnership to help you
+              recover stronger, move better, and return to the activities
+              that matter most.
             </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                href="/what-we-treat"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-slate-900 transition hover:bg-slate-100"
+              >
+                What We Treat
+              </a>
+              <a
+                href="/services"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 font-bold text-white transition hover:bg-white/10"
+              >
+                Services
+              </a>
+            </div>
           </motion.div>
         </Container>
       </section>
 
-      {/* VALUES */}
-      <section className="bg-slate-50 py-20 md:py-24">
+      {/* ===== INTRO / STORY ===== */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <div className="mx-auto max-w-3xl space-y-6 text-lg leading-8 text-slate-600">
+            <p>
+              DE-INES Physiotherapy began with a straightforward goal: bring
+              honest, personalised, evidence-based physiotherapy care to
+              people who need it — delivered with the kind of clear
+              communication that makes recovery feel achievable, not
+              overwhelming.
+            </p>
+            <p>
+              From musculoskeletal rehabilitation and sports injuries to pain
+              management and post-surgical recovery, our team combines
+              hands-on treatment, therapeutic exercise, and patient education
+              in a program built around your goals — not a generic template.
+            </p>
+            <p>
+              We measure success not by how many times you visit us, but by
+              how well-equipped you are to manage your own health once
+              treatment ends.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* ===== VALUES ===== */}
+      <section className="bg-slate-50 py-20 md:py-28">
         <Container>
           <div className="text-center">
             <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
@@ -173,6 +154,9 @@ const About = () => {
             <h2 className="mt-3 text-4xl font-bold text-slate-900 md:text-5xl">
               A values-driven approach to physiotherapy
             </h2>
+            <p className="mt-4 text-lg font-medium text-blue-700">
+              Compassion &nbsp;|&nbsp; Collaboration &nbsp;|&nbsp; Excellence
+            </p>
           </div>
 
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -198,7 +182,7 @@ const About = () => {
         </Container>
       </section>
 
-      {/* WE UNDERSTAND */}
+      {/* ===== WE UNDERSTAND ===== */}
       <section className="py-20 md:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -207,13 +191,9 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-3xl bg-slate-100"
+              className="flex h-96 items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[460px]"
             >
-              <img
-                src="/images/team-indoor.png"
-                alt="DE-INES Physiotherapy clinic"
-                className="h-[460px] w-full object-cover"
-              />
+              <div className="text-6xl">🩹</div>
             </motion.div>
 
             <motion.div
@@ -225,23 +205,19 @@ const About = () => {
               <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
                 We Understand
               </p>
-
               <h2 className="mt-4 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
-                You’re in pain and you want to know…
+                You're in pain and you want to know…
               </h2>
 
               <div className="mt-8 space-y-5 text-lg text-slate-600">
-                <p>What’s wrong, and is it serious?</p>
-                <p>Can physiotherapy actually help?</p>
-                <p>How long might recovery take?</p>
-                <p>What can you do to feel better?</p>
-                <p>When can you get back to normal activities?</p>
-                <p>What will treatment involve?</p>
+                {painPoints.map((point) => (
+                  <p key={point}>{point}</p>
+                ))}
               </div>
 
               <p className="mt-8 leading-7 text-slate-600">
                 These are normal questions. Our job is to help you understand
-                what is happening, what your options are, and what steps you
+                what's happening, what your options are, and what steps you
                 can take toward recovery.
               </p>
             </motion.div>
@@ -249,7 +225,7 @@ const About = () => {
         </Container>
       </section>
 
-      {/* WHY CHOOSE US */}
+      {/* ===== WHY CHOOSE US ===== */}
       <section id="why-choose-us" className="bg-slate-50 py-20 md:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -262,7 +238,6 @@ const About = () => {
               <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
                 Why Choose DE-INES?
               </p>
-
               <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
                 Care that goes beyond the treatment room
               </h2>
@@ -282,19 +257,15 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-3xl"
+              className="flex h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[520px]"
             >
-              <img
-                src="/images/director-clinic.png"
-                alt="DE-INES Physiotherapy"
-                className="h-[520px] w-full object-cover"
-              />
+              <div className="text-6xl">🏥</div>
             </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* OUR APPROACH */}
+      {/* ===== OUR APPROACH ===== */}
       <section className="py-20 md:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -303,13 +274,9 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-3xl"
+              className="flex h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[500px]"
             >
-              <img
-                src="/images/staff-single.png"
-                alt="DE-INES physiotherapy care"
-                className="h-[500px] w-full object-cover"
-              />
+              <div className="text-6xl">🧑‍⚕️</div>
             </motion.div>
 
             <motion.div
@@ -321,7 +288,6 @@ const About = () => {
               <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
                 Our Approach
               </p>
-
               <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
                 How do we solve your problem?
               </h2>
@@ -346,185 +312,64 @@ const About = () => {
         </Container>
       </section>
 
-      {/* MEET THE TEAM */}
-<section className="bg-slate-50 py-20 md:py-28">
-  <Container>
-    <div className="mx-auto max-w-3xl text-center">
-      <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
-        Our People
-      </p>
-      <h2 className="mt-3 text-4xl font-bold text-slate-900 md:text-5xl">
-        Meet our team
-      </h2>
-      <p className="mt-5 text-lg leading-8 text-slate-600">
-        Meet the professionals behind DE-INES Physiotherapy and Sports
-        Consults.
-      </p>
-    </div>
-
-    <div className="mt-16 grid gap-8 lg:grid-cols-3">
-      {team.map((member, index) => (
-        <motion.article
-          key={member.name}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="overflow-hidden rounded-3xl bg-white shadow-sm"
-        >
-          {/* Initials Placeholder */}
-          <div className="flex h-64 items-center justify-center bg-blue-50 text-5xl font-bold text-blue-700">
-            {member.name
-              .split(" ")
-              .map((n) => n[0])
-              .join("")
-              .slice(0, 2)
-              .toUpperCase()}
-          </div>
-
-          <div className="p-7">
-            <h3 className="text-2xl font-bold text-slate-900">
-              {member.name}
-            </h3>
-            <p className="mt-2 text-lg font-medium text-blue-700">
-              {member.role}
-            </p>
-            {member.credentials && (
-              <p className="mt-3 text-xs font-semibold uppercase leading-5 tracking-wide text-slate-400">
-                {member.credentials}
-              </p>
-            )}
-            <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">
-              <p>{member.bio}</p>
-              <p>{member.secondBio}</p>
-            </div>
-          </div>
-        </motion.article>
-      ))}
-    </div>
-  </Container>
-</section>
-
-      {/* LIFE AT DE-INES */}
-      <section className="py-20 md:py-28">
+      {/* ===== MEET THE TEAM ===== */}
+      <section className="bg-slate-50 py-20 md:py-28">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center"
-          >
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
-              Life at DE-INES
+              Our People
             </p>
-            <h2 className="mt-4 text-4xl font-bold text-slate-900 md:text-5xl">
-              See the people behind the care
+            <h2 className="mt-3 text-4xl font-bold text-slate-900 md:text-5xl">
+              Meet our team
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Get a glimpse of our team, our environment, and the work we do
-              at DE-INES Physiotherapy and Sports Consults.
+              Meet the professionals behind DE-INES Physiotherapy.
             </p>
-          </motion.div>
-
-          {/* Gallery Strip */}
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                src: "/images/team-outside.png",
-                alt: "DE-INES team outside the clinic",
-                label: "Our Team",
-              },
-              {
-                src: "/images/team-indoor.png",
-                alt: "DE-INES team inside the clinic",
-                label: "Inside DE-INES",
-              },
-              {
-                src: "/images/director-clinic.png",
-                alt: "DE-INES director",
-                label: "Our Leadership",
-              },
-            ].map((image, index) => (
-              <motion.div
-                key={image.src}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative h-[320px] overflow-hidden rounded-3xl"
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent" />
-                <p className="absolute bottom-6 left-6 text-xl font-bold text-white">
-                  {image.label}
-                </p>
-              </motion.div>
-            ))}
           </div>
 
-          {/* Videos */}
-          <div className="mt-16 grid gap-10 lg:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-3xl bg-slate-950 p-4 shadow-xl md:p-6"
-            >
-              <div className="mb-5 flex items-center gap-3 text-white">
-                <PlayCircle className="h-6 w-6 text-blue-300" />
-                <div>
-                  <h3 className="font-bold">Life at DE-INES</h3>
-                  <p className="text-sm text-slate-400">Our team and outreach</p>
-                </div>
-              </div>
-              <video
-                className="mx-auto max-h-[620px] w-full rounded-2xl object-contain"
-                controls
-                playsInline
-                preload="metadata"
+          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+            {team.map((member, index) => (
+              <motion.article
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="overflow-hidden rounded-3xl bg-white shadow-sm"
               >
-                <source src="/gallery/outreach.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </motion.div>
+                <div className="flex h-64 items-center justify-center bg-blue-50 text-5xl font-bold text-blue-700">
+                  {member.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")
+                    .slice(0, 2)
+                    .toUpperCase()}
+                </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-3xl bg-slate-950 p-4 shadow-xl md:p-6"
-            >
-              <div className="mb-5 flex items-center gap-3 text-white">
-                <PlayCircle className="h-6 w-6 text-blue-300" />
-                <div>
-                  <h3 className="font-bold">Meet Our Leadership</h3>
-                  <p className="text-sm text-slate-400">A message from DE-INES</p>
+                <div className="p-7">
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {member.name}
+                  </h3>
+                  <p className="mt-2 text-lg font-medium text-blue-700">
+                    {member.role}
+                  </p>
+                  {member.credentials && (
+                    <p className="mt-3 text-xs font-semibold uppercase leading-5 tracking-wide text-slate-400">
+                      {member.credentials}
+                    </p>
+                  )}
+                  <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">
+                    <p>{member.bio}</p>
+                    <p>{member.secondBio}</p>
+                  </div>
                 </div>
-              </div>
-              <video
-                className="h-full max-h-[620px] min-h-[350px] w-full rounded-2xl object-contain"
-                controls
-                playsInline
-                preload="metadata"
-                poster="/images/director-clinic.png"
-              >
-                <source src="/gallery/director-video-web.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </motion.div>
+              </motion.article>
+            ))}
           </div>
         </Container>
       </section>
 
-      {/* FINAL CTA */}
+      {/* ===== FINAL CTA ===== */}
       <section className="bg-blue-700 py-20">
         <Container>
           <motion.div
@@ -553,9 +398,8 @@ const About = () => {
           </motion.div>
         </Container>
       </section>
-    </section>
+    </main>
   );
 };
 
 export default About;
-

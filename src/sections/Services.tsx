@@ -1,93 +1,17 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
-
-const services = [
-  {
-    title: "Musculoskeletal Physiotherapy",
-    intro:
-      "Assessment and treatment for pain, stiffness, movement restrictions, and everyday musculoskeletal conditions.",
-    conditions: [
-      "Back and neck pain",
-      "Shoulder pain",
-      "Knee and ankle problems",
-      "Muscle and tendon injuries",
-      "Arthritis and joint pain",
-      "Headaches and migraines",
-    ],
-  },
-  {
-    title: "Sports Physiotherapy",
-    intro:
-      "Specialist physiotherapy for athletes and active people, helping you recover from injury and return safely to sport.",
-    conditions: [
-      "Sports injuries",
-      "Muscle strains",
-      "Ligament injuries",
-      "Running injuries",
-      "Ankle sprains",
-      "Return-to-sport rehabilitation",
-    ],
-  },
-  {
-    title: "Women's & Men's Pelvic Health",
-    intro:
-      "Physiotherapy support for pelvic health, pregnancy, postpartum recovery, and related conditions.",
-    conditions: [
-      "Pregnancy support",
-      "Postpartum rehabilitation",
-      "Pelvic floor dysfunction",
-      "Incontinence",
-      "Pelvic pain",
-      "Men's pelvic health",
-    ],
-  },
-  {
-    title: "Orthopaedic & Post-Surgical Rehabilitation",
-    intro:
-      "Structured rehabilitation following surgery, fractures, joint injuries, and orthopaedic procedures.",
-    conditions: [
-      "Knee replacement",
-      "Hip replacement",
-      "ACL reconstruction",
-      "Fracture rehabilitation",
-      "Shoulder repairs",
-      "Post-operative rehabilitation",
-    ],
-  },
-  {
-    title: "Neurological Rehabilitation",
-    intro:
-      "Individualised rehabilitation designed to improve movement, strength, balance, coordination, and independence.",
-    conditions: [
-      "Stroke rehabilitation",
-      "Brain injury",
-      "Spinal cord conditions",
-      "Nerve injuries",
-      "Balance problems",
-      "Mobility rehabilitation",
-    ],
-  },
-  {
-    title: "Functional & Specialist Rehabilitation",
-    intro:
-      "Rehabilitation for complex conditions affecting mobility, physical function, independence, and quality of life.",
-    conditions: [
-      "Amputation rehabilitation",
-      "Falls prevention",
-      "Mobility training",
-      "Post-burn contractures",
-      "Club-foot management",
-      "Functional rehabilitation",
-    ],
-  },
-];
+import { services } from "./Services/servicesData";
 
 const Services = () => {
   return (
     <main className="bg-white">
       {/* Page Hero */}
-      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+      <section
+        id="services"
+        className="relative overflow-hidden bg-slate-950 py-24 md:py-32"
+      >
         <div className="absolute inset-0 bg-blue-950/30" />
 
         <Container>
@@ -142,16 +66,16 @@ const Services = () => {
 
           {/* Service Packages */}
           <div className="mt-16 space-y-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <article
-                key={service.title}
+                key={service.slug}
                 className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50"
               >
                 <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
                   {/* Service heading */}
                   <div className="bg-slate-950 p-8 text-white md:p-10">
                     <span className="text-sm font-bold text-blue-300">
-                      0{index + 1}
+                      {service.number}
                     </span>
 
                     <h3 className="mt-5 text-2xl font-bold leading-tight md:text-3xl">
@@ -159,18 +83,16 @@ const Services = () => {
                     </h3>
 
                     <p className="mt-5 leading-7 text-white/70">
-                      {service.intro}
+                      {service.shortDescription}
                     </p>
 
-                    <a
-                      href={WHATSAPP_BOOK}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={`/services/${service.slug}`}
                       className="mt-8 inline-flex items-center gap-2 font-semibold text-blue-300 transition hover:text-blue-200"
                     >
-                      Discuss This Service
+                      Learn More
                       <ArrowRight className="h-4 w-4" />
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Conditions */}
@@ -215,8 +137,8 @@ const Services = () => {
               </h2>
 
               <p className="mt-4 text-lg leading-8 text-white/80">
-                Speak with the DE-INES team about your condition and goals.
-                We can help you understand the most appropriate next step.
+                Speak with the DE-INES team about your condition and goals. We
+                can help you understand the most appropriate next step.
               </p>
             </div>
 

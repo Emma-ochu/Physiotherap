@@ -1,25 +1,53 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) return;
+
+    video.muted = true;
+
+    const playVideo = () => {
+      video.play().catch((error) => {
+        console.log("Mobile video autoplay blocked:", error);
+      });
+    };
+
+    if (video.readyState >= 3) {
+      playVideo();
+    } else {
+      video.addEventListener("canplay", playVideo);
+    }
+
+    return () => {
+      video.removeEventListener("canplay", playVideo);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-[820px] overflow-hidden bg-slate-950">
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
+          ref={videoRef}
           className="h-full w-full object-cover object-center"
           autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
         >
           <source src="/gallery/clinic-video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
-        {/* Dark overlay (similar strength to Tangible) */}
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-slate-950/60" />
       </div>
 
@@ -50,7 +78,7 @@ const Hero = () => {
             recover stronger
           </motion.h1>
 
-          {/* Short supporting line */}
+          {/* Supporting line */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +89,7 @@ const Hero = () => {
             rehabilitation and lasting recovery.
           </motion.p>
 
-          {/* Buttons – Tangible style */}
+          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +97,7 @@ const Hero = () => {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <a
-              href="#services"
+              href="/services"
               className="inline-flex min-w-[220px] items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-blue-700"
             >
               Physiotherapy Services

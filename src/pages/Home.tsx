@@ -1,15 +1,19 @@
 import Hero from "../sections/Hero";
 import TrustBar from "../sections/TrustBar";
-import WhatWeTreat from "../sections/WhatWeTreat";
+import CommonComplaints from "../sections/CommonComplaints";
+import FeaturedServicesDetail from "../sections/FeaturedServicesDetail";
 import Testimonials from "../sections/Testimonial";
+import Gallery from "../sections/Gallery";
 import Contact from "../sections/Contact";
 
 const Home = () => (
   <>
     <Hero />
     <TrustBar />
-    <WhatWeTreat />
+    <CommonComplaints />
+    <FeaturedServicesDetail />
     <Testimonials />
+    <Gallery />
     <Contact />
   </>
 );
