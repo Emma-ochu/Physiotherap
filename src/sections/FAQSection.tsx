@@ -1,5 +1,4 @@
-import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Container from "../components/Container";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
@@ -10,14 +9,17 @@ interface FAQItem {
   answer: string;
 }
 
-const FAQSection = () => {
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
 
+const FAQSection = () => {
   const faqs: FAQItem[] = [
     {
       id: "about-01",
       category: "About Physiotherapy",
-      question: "What is physiotherapy?",
+      question: "Can I choose my own physiotherapist??",
       answer:
         "Physiotherapy is a healthcare profession focused on helping people improve and maintain movement, function, and quality of life. Physiotherapists assess, treat, and educate people to help manage pain, prevent injury, and support recovery from illness or injury.",
     },
@@ -130,20 +132,15 @@ const FAQSection = () => {
       answer:
         "We understand that things come up. Please contact us as soon as possible if you need to cancel or reschedule. We typically ask for 24 hours notice to avoid cancellation fees.",
     },
-    {
-      id: "other-03",
-      category: "Other Questions",
-      question: "Do you offer corporate or workplace programs?",
-      answer:
-        "Yes, we offer workplace health and injury prevention programs for organizations. Contact us to discuss how we can support your workplace wellness needs.",
-    },
   ];
 
-  const categories = ["About Physiotherapy", "Treatment & Services", "Practical Information", "Home Exercises & Recovery", "Other Questions"];
-
-  const toggleFAQ = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+  const categories = [
+    "About Physiotherapy",
+    "Treatment & Services",
+    "Practical Information",
+    "Home Exercises & Recovery",
+    "Other Questions",
+  ];
 
   return (
     <main className="bg-white">
@@ -165,39 +162,32 @@ const FAQSection = () => {
       {/* FAQ Sections */}
       <section className="py-20 md:py-28">
         <Container>
-          <div className="mx-auto max-w-3xl">
+          <div className="mx-auto max-w-5xl">
             {categories.map((category) => {
               const categoryFaqs = faqs.filter((faq) => faq.category === category);
               return (
-                <div key={category} className="mb-12">
+                <div key={category} className="mb-16">
                   <h2 className="mb-8 text-2xl font-bold text-slate-900">
                     {category}
                   </h2>
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                     {categoryFaqs.map((faq) => (
-                      <div
+                      <motion.div
                         key={faq.id}
-                        className="overflow-hidden rounded-lg border border-slate-200 bg-slate-50 transition"
+                        variants={cardVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
                       >
-                        <button
-                          onClick={() => toggleFAQ(faq.id)}
-                          className="flex w-full items-center justify-between gap-4 p-6 text-left hover:bg-slate-100"
-                        >
-                          <h3 className="font-semibold text-slate-900">
-                            {faq.question}
-                          </h3>
-                          <ChevronDown
-                            className={`h-5 w-5 shrink-0 text-slate-600 transition ${
-                              expandedId === faq.id ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                        {expandedId === faq.id && (
-                          <div className="border-t border-slate-200 px-6 py-4">
-                            <p className="text-slate-700">{faq.answer}</p>
-                          </div>
-                        )}
-                      </div>
+                        <h3 className="text-lg font-semibold text-slate-900">
+                          {faq.question}
+                        </h3>
+                        <p className="mt-3 leading-relaxed text-slate-600">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
                     ))}
                   </div>
                 </div>

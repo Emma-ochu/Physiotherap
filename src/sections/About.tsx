@@ -78,6 +78,12 @@ const About = () => {
     <main className="bg-white">
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+      {/* {BackGround Image} */}
+      <img
+    src="/images/team-outside.png" // Replace with your team photo path
+    alt="DE-INES Physiotherapy Team"
+    className="absolute inset-0 h-full w-full object-cover object-center"
+  />
         <div className="absolute inset-0 bg-blue-950/30" />
         <Container>
           <motion.div
@@ -103,13 +109,13 @@ const About = () => {
             <div className="mt-10 flex flex-wrap gap-4">
               <a
                 href="/what-we-treat"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 font-bold text-slate-900 transition hover:bg-slate-100"
+                className="inline-flex items-center gap-2 rounded-full bg-red-500 px-6 py-3 font-bold text-white transition hover:bg-red-600"
               >
                 What We Treat
               </a>
               <a
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-white px-6 py-3 font-bold text-white transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 font-bold text-white transition hover:bg-cyan-600"
               >
                 Services
               </a>
@@ -191,9 +197,13 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex h-96 items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[460px]"
+              className="h-96 overflow-hidden rounded-3xl lg:h-[460px]"
             >
-              <div className="text-6xl">🩹</div>
+              <img
+                src="/images/You.jpg"
+                alt="DE-INES Physiotherapy team at the clinic"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
 
             <motion.div
@@ -257,9 +267,13 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[520px]"
+              className="h-[420px] overflow-hidden rounded-3xl lg:h-[520px]"
             >
-              <div className="text-6xl">🏥</div>
+              <img
+                src="/images/dei-lady.jpg"
+                alt="Inside DE-INES Physiotherapy clinic"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
           </div>
         </Container>
@@ -274,9 +288,13 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="flex h-[420px] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-slate-100 lg:h-[500px]"
+              className="h-[420px] overflow-hidden rounded-3xl lg:h-[500px]"
             >
-              <div className="text-6xl">🧑‍⚕️</div>
+              <img
+                src="/images/massage.jpg"
+                alt="DE-INES Physiotherapy team"
+                className="h-full w-full object-fill"
+              />
             </motion.div>
 
             <motion.div
@@ -337,13 +355,12 @@ const About = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="overflow-hidden rounded-3xl bg-white shadow-sm"
               >
-                <div className="flex h-64 items-center justify-center bg-blue-50 text-5xl font-bold text-blue-700">
-                  {member.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")
-                    .slice(0, 2)
-                    .toUpperCase()}
+                <div className="h-64 overflow-hidden">
+                  <img
+                    src="/images/staff-single.png"
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
 
                 <div className="p-7">
