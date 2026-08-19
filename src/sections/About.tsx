@@ -48,28 +48,40 @@ const approach = [
 
 const team = [
   {
-    name: "Clinical Lead / Founder",
-    role: "Physiotherapist & Director",
-    credentials: "B.Sc. Physiotherapy | Professional Membership",
-    bio: "Our clinical director brings years of experience in physiotherapy and rehabilitation. Passionate about evidence-based care, they've built DE-INES on a foundation of thorough assessment, honest communication, and genuine patient-centred care.",
-    secondBio:
-      "Outside the clinic, they're driven by the same belief that shapes every session here: that recovery is a partnership, not something done to you.",
+    name: "Founder Name",
+    role: "Founder & Clinical Director",
+    image: "/images/director-clinic.png",
+    bgColor: "bg-blue-600",
   },
   {
-    name: "Senior Physiotherapist",
-    role: "Specialised Therapist",
-    credentials: "B.Sc. Physiotherapy | Professional Membership",
-    bio: "A dedicated clinician with deep expertise in helping patients overcome movement limitations and chronic pain. They believe every patient deserves to understand their condition and have an active role in recovery.",
-    secondBio:
-      "Their focus areas include women's health, post-surgical rehab, and sports performance — always with an emphasis on long-term, independent wellbeing.",
+    name: "Manager Name",
+    role: "Manager",
+    image: "/images/manager.jpg",
+    bgColor: "bg-blue-600",
   },
   {
-    name: "Therapist",
-    role: "Clinical Team",
-    credentials: "B.Sc. Physiotherapy | Professional Membership",
-    bio: "Committed to delivering compassionate, evidence-based care. They work closely with each patient to develop realistic recovery goals and celebrate the progress made along the way.",
-    secondBio:
-      "Areas of interest include orthopaedic care, neurological rehab, and functional training for everyday life.",
+    name: "Physiotherapist One",
+    role: "Senior Physiotherapist",
+    image: "/images/physio-1.jpg",
+    bgColor: "bg-cyan-500",
+  },
+  {
+    name: "Physiotherapist Two",
+    role: "Physiotherapist",
+    image: "/images/physio-2.jpg",
+    bgColor: "bg-teal-500",
+  },
+  {
+    name: "Physiotherapist Three",
+    role: "Physiotherapist",
+    image: "/images/physio-3.jpg",
+    bgColor: "bg-slate-600",
+  },
+  {
+    name: "Secretary Name",
+    role: "Practice Manager",
+    image: "/images/secretary.jpg",
+    bgColor: "bg-blue-800",
   },
 ];
 
@@ -77,50 +89,54 @@ const About = () => {
   return (
     <main className="bg-white">
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-      {/* {BackGround Image} */}
-      <img
-    src="/images/team-outside.png" // Replace with your team photo path
-    alt="DE-INES Physiotherapy Team"
-    className="absolute inset-0 h-full w-full object-cover object-center"
-  />
-        <div className="absolute inset-0 bg-blue-950/30" />
+      <section className="relative min-h-[620px] overflow-hidden bg-slate-950">
+        <img
+          src="/images/deines.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-y-0 right-0 h-full w-full object-contain object-right opacity-70 md:w-[60%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/30" />
+        <div className="absolute inset-0 bg-slate-950/35 md:hidden" />
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="relative z-10 mx-auto max-w-4xl text-white"
-          >
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
-              Our Story
-            </p>
-            <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
-              About DE-INES
-            </h1>
-            <p className="mt-8 text-lg leading-8 text-white/80">
-              DE-INES Physiotherapy was founded on a simple belief: that
-              everyone deserves access to high-quality, compassionate
-              physiotherapy care. We combine thorough assessment,
-              evidence-based treatment, and genuine partnership to help you
-              recover stronger, move better, and return to the activities
-              that matter most.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="/what-we-treat"
-                className="inline-flex items-center gap-2 rounded-full bg-red-500 px-6 py-3 font-bold text-white transition hover:bg-red-600"
-              >
-                What We Treat
-              </a>
-              <a
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-6 py-3 font-bold text-white transition hover:bg-cyan-600"
-              >
-                Services
-              </a>
-            </div>
-          </motion.div>
+          <div className="relative z-10 flex min-h-[620px] items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-3xl py-24 text-white"
+            >
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
+                Our Story
+              </p>
+              <h1 className="mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
+                About DE-INES
+              </h1>
+              <p className="mt-7 max-w-3xl text-base leading-8 text-white/85 md:text-lg md:leading-9">
+                DE-INES Physiotherapy was founded on a simple belief: that everyone
+                deserves access to high-quality, compassionate physiotherapy care.
+                We combine thorough assessment, evidence-based treatment, and
+                genuine partnership to help you recover stronger, move better, and
+                return to the activities that matter most.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="/what-we-treat"
+                  className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800"
+                >
+                  What We Treat
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="/services"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20"
+                >
+                  Services
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -270,7 +286,7 @@ const About = () => {
               className="h-[420px] overflow-hidden rounded-3xl lg:h-[520px]"
             >
               <img
-                src="/images/dei-lady.jpg"
+                src="/images/secretary-2.jpg"
                 alt="Inside DE-INES Physiotherapy clinic"
                 className="h-full w-full object-cover"
               />
@@ -331,7 +347,7 @@ const About = () => {
       </section>
 
       {/* ===== MEET THE TEAM ===== */}
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className="bg-white py-20 md:py-28">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
@@ -341,45 +357,51 @@ const About = () => {
               Meet our team
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Meet the professionals behind DE-INES Physiotherapy.
+              This is our team — the people who work hard to empower your recovery.
             </p>
           </div>
 
-          <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member, index) => (
               <motion.article
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="overflow-hidden rounded-3xl bg-white shadow-sm"
+                whileHover={{ y: -6 }}
+                className="group cursor-default"
               >
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src="/images/staff-single.png"
+                <div className={`aspect-[4/5] w-full overflow-hidden ${member.bgColor}`}>
+                  <motion.img
+                    src={member.image}
                     alt={member.name}
                     className="h-full w-full object-cover"
+                    initial={{ opacity: 0, scale: 1.15, y: 30 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{
+                      duration: 0.9,
+                      delay: index * 0.1 + 0.15,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    whileHover={{ scale: 1.08 }}
                   />
                 </div>
-
-                <div className="p-7">
-                  <h3 className="text-2xl font-bold text-slate-900">
+                <motion.div
+                  className="mt-5"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 + 0.35 }}
+                >
+                  <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-700">
                     {member.name}
                   </h3>
-                  <p className="mt-2 text-lg font-medium text-blue-700">
+                  <p className="mt-1 text-sm font-medium uppercase tracking-wide text-slate-500">
                     {member.role}
                   </p>
-                  {member.credentials && (
-                    <p className="mt-3 text-xs font-semibold uppercase leading-5 tracking-wide text-slate-400">
-                      {member.credentials}
-                    </p>
-                  )}
-                  <div className="mt-5 space-y-4 text-sm leading-7 text-slate-600">
-                    <p>{member.bio}</p>
-                    <p>{member.secondBio}</p>
-                  </div>
-                </div>
+                </motion.div>
               </motion.article>
             ))}
           </div>
