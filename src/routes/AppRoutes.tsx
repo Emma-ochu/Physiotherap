@@ -6,11 +6,11 @@ import Home from "../pages/Home";
 import About from "../pages/AboutPage";
 import Services from "../pages/Services";
 import TrainingPage from "../pages/TrainingPage";
-import Gallery from "../pages/Gallery";
 import Contact from "../pages/Contact";
 import WhatWeTreatPage from "../pages/WhatWeTreat";
 import PatientInfo from "../pages/PatientInfo";
 import FAQ from "../pages/FAQ";
+import ScrollToTop from "../components/ScrollToTop";
 
 import ServicesDetails from "../sections/Services/ServicesDetails";
 import { services } from "../sections/Services/servicesData";
@@ -29,6 +29,7 @@ const ServicesDetailsRoute = () => {
 const AppRoutes = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
@@ -44,7 +45,6 @@ const AppRoutes = () => {
 
           <Route path="training" element={<TrainingPage />} />
 
-          <Route path="gallery" element={<Gallery />} />
 
           <Route path="contact" element={<Contact />} />
 

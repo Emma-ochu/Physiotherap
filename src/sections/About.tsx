@@ -48,41 +48,75 @@ const approach = [
 
 const team = [
   {
-    name: "Founder Name",
-    role: "Founder & Clinical Director",
-    image: "/images/director-clinic.png",
+    name: "Inegbenejie Sylvester Bamidele",
+    role: "Clinic Medical Director",
+    category: "Executive & Management",
+    description: "Oversees clinical standards and patient care strategy, ensuring every treatment meets the highest professional benchmarks.",
+    image: "/images/Bamidele.png",
     bgColor: "bg-blue-600",
   },
   {
-    name: "Manager Name",
-    role: "Manager",
+    name: "Blessing Modupe Jacob-Ogenah",
+    role: "Clinic Manager",
+    category: "Executive & Management",
+    description: "Coordinates day-to-day operations, staff, and patient experience to keep the clinic running smoothly and efficiently.",
     image: "/images/manager.jpg",
-    bgColor: "bg-blue-600",
+    bgColor: "bg-blue-700",
   },
   {
-    name: "Physiotherapist One",
-    role: "Senior Physiotherapist",
+    name: "Nwoba Kelechi Igwon",
+    role: "Chief Physiotherapist",
+    category: "Clinical Staff",
+    description: "Leads the clinical team with advanced musculoskeletal expertise and evidence-based rehabilitation protocols.",
     image: "/images/physio-1.jpg",
-    bgColor: "bg-cyan-500",
+    bgColor: "bg-cyan-600",
   },
   {
-    name: "Physiotherapist Two",
-    role: "Physiotherapist",
+    name: "Oyaluna Joshua Oseojie",
+    role: "Senior Physiotherapist",
+    category: "Clinical Staff",
+    description: "Specialises in sports injury recovery and post-surgical rehabilitation with a focus on restoring full function.",
+    image: "/images/physio-4.jpg",
+    bgColor: "bg-teal-600",
+  },
+  {
+    name: "Obamedo Celestina Osayamen",
+    role: "Intern Physiotherapist",
+    category: "Clinical Staff",
+    description: "Supports patient care under senior supervision, bringing fresh energy and up-to-date academic knowledge to treatment sessions.",
     image: "/images/physio-2.jpg",
-    bgColor: "bg-teal-500",
+    bgColor: "bg-emerald-600",
   },
   {
-    name: "Physiotherapist Three",
-    role: "Physiotherapist",
-    image: "/images/physio-3.jpg",
+    name: "Ighomuaye Mamuzo Blessing",
+    role: "Clinic Administrator",
+    category: "Administration & Technical Support",
+    description: "Manages appointments, records, and patient flow so your visit is seamless from check-in to checkout.",
+    image: "/images/blessing.jpg",
     bgColor: "bg-slate-600",
   },
   {
-    name: "Secretary Name",
-    role: "Practice Manager",
+    name: "Onyemachi Confidence Ifeoma",
+    role: "Clinic Secretary",
+    category: "Administration & Technical Support",
+    description: "Your first point of contact — friendly, organised, and ready to help with scheduling and enquiries.",
     image: "/images/secretary.jpg",
     bgColor: "bg-blue-800",
   },
+  {
+    name: "Osayande John Ikponmwosa",
+    role: "IT Specialist",
+    category: "Administration & Technical Support",
+    description: "Maintains our digital systems and patient data security, keeping everything behind the scenes working flawlessly.",
+    image: "/images/uncle-ik.jpg",
+    bgColor: "bg-indigo-700",
+  },
+];
+
+const teamCategories = [
+  "Executive & Management",
+  "Clinical Staff",
+  "Administration & Technical Support",
 ];
 
 const About = () => {
@@ -347,64 +381,186 @@ const About = () => {
       </section>
 
       {/* ===== MEET THE TEAM ===== */}
-      <section className="bg-white py-20 md:py-28">
+      <section className="bg-slate-50 py-24 md:py-32">
         <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-bold uppercase tracking-widest text-blue-700">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <span className="inline-block rounded-full bg-blue-100 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-blue-700">
               Our People
-            </p>
-            <h2 className="mt-3 text-4xl font-bold text-slate-900 md:text-5xl">
-              Meet our team
+            </span>
+            <h2 className="mt-5 text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+              Meet the team
             </h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              This is our team — the people who work hard to empower your recovery.
+            <p className="mt-5 text-lg leading-relaxed text-slate-500">
+              Dedicated professionals committed to your recovery.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member, index) => (
-              <motion.article
-                key={member.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -6 }}
-                className="group cursor-default"
-              >
-                <div className={`aspect-[4/5] w-full overflow-hidden ${member.bgColor}`}>
-                  <motion.img
-                    src={member.image}
-                    alt={member.name}
-                    className="h-full w-full object-cover"
-                    initial={{ opacity: 0, scale: 1.15, y: 30 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
-                    transition={{
-                      duration: 0.9,
-                      delay: index * 0.1 + 0.15,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    whileHover={{ scale: 1.08 }}
-                  />
+          <div className="mt-20 space-y-20">
+            {teamCategories.map((category) => {
+              const members = team.filter((m) => m.category === category);
+
+              return (
+                <div key={category}>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mb-10 flex items-center gap-4"
+                  >
+                    <div className="h-px flex-1 bg-slate-200" />
+                    <span className="whitespace-nowrap text-sm font-bold uppercase tracking-[0.2em] text-slate-400">
+                      {category}
+                    </span>
+                    <div className="h-px flex-1 bg-slate-200" />
+                  </motion.div>
+
+                  <div className={`grid gap-6 sm:grid-cols-2 
+                    ${members.length < 3 ? "mx-auto max-w-4xl lg:grid-cols-2" : "lg:grid-cols-3"}`}>
+                    {members.map((member, index) => (
+                      <motion.article
+                        key={member.name}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.15 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg"
+                      >
+                        <div className="relative aspect-[4/5] overflow-hidden">
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                          <div className={`absolute left-0 top-0 h-1 w-full ${member.bgColor}`} />
+                        </div>
+
+                        <div className="p-6">
+                          <p className="text-xs font-bold uppercase tracking-[0.15em] text-blue-600">
+                            {member.role}
+                          </p>
+                          <h3 className="mt-2 text-xl font-bold text-slate-900">
+                            {member.name}
+                          </h3>
+                          <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                            {member.description}
+                          </p>
+                        </div>
+                      </motion.article>
+                    ))}
+                  </div>
                 </div>
-                <motion.div
-                  className="mt-5"
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.35 }}
-                >
-                  <h3 className="text-xl font-bold text-slate-900 transition-colors group-hover:text-blue-700">
-                    {member.name}
-                  </h3>
-                  <p className="mt-1 text-sm font-medium uppercase tracking-wide text-slate-500">
-                    {member.role}
-                  </p>
-                </motion.div>
-              </motion.article>
-            ))}
+              );
+            })}
           </div>
+        </Container>
+      </section>
+
+      {/* ===== VIDEOS ===== */}
+      <section className="py-24">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
+              Inside DE-INES
+            </span>
+            <h2 className="mt-5 text-4xl font-bold leading-tight text-slate-900 md:text-5xl">
+              See Our Clinic in Action
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              Take a look at our facility, our outreach work, and the environment
+              where we provide professional physiotherapy care.
+            </p>
+          </motion.div>
+
+          {/* Outreach Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6 }}
+            className="mt-16"
+          >
+            <h3 className="mb-6 text-2xl font-bold text-slate-900 md:text-3xl">
+              Community Outreach
+            </h3>
+            <div className="flex justify-center overflow-hidden rounded-[28px] bg-slate-950 p-4 shadow-xl md:p-8">
+              <video
+                className="h-auto max-h-[720px] w-full max-w-[430px] rounded-2xl object-contain"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/team-outside.png"
+              >
+                <source src="/gallery/outreach.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </motion.div>
+
+          {/* Director Feature */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mt-24 overflow-hidden rounded-[28px] bg-slate-50 shadow-xl"
+          >
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="flex min-h-[420px] items-center justify-center bg-black lg:min-h-[560px]">
+                <video
+                  className="h-full max-h-[560px] w-full object-contain"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/director-clinic.png"
+                >
+                  <source src="/gallery/director-video-web.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
+              <div className="flex items-center p-8 md:p-12 lg:p-16">
+                <div className="max-w-xl">
+                  <span className="inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+                    Leadership
+                  </span>
+                  <h3 className="mt-6 text-3xl font-bold leading-tight text-slate-900 md:text-4xl">
+                    Leading With Experience & Care
+                  </h3>
+                  <div className="mt-6 space-y-4 text-lg leading-8 text-slate-600">
+                    <p>
+                      At DE-INES Physiotherapy and Sports Consults, our leadership
+                      is committed to providing professional, compassionate, and
+                      patient-focused physiotherapy services.
+                    </p>
+                    <p>
+                      With a focus on rehabilitation, mobility, sports injuries,
+                      pain management, and wellness, our team works to help every
+                      patient achieve better movement and quality of life.
+                    </p>
+                  </div>
+                  <a
+                    href="https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20the%20Director%20of%20DE-INES%20Physiotherapy%20about%20your%20services."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-flex rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white transition hover:bg-blue-800"
+                  >
+                    Talk to the Director
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </Container>
       </section>
 

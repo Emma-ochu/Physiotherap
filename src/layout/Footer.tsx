@@ -149,10 +149,10 @@ const Footer = () => {
 
               <li>
                 <NavLink
-                  to="/gallery"
+                  to="/about"
                   className="transition hover:text-blue-400"
                 >
-                  Gallery
+                  About
                 </NavLink>
               </li>
 

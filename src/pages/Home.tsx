@@ -3,7 +3,7 @@ import TrustBar from "../sections/TrustBar";
 import CommonComplaints from "../sections/CommonComplaints";
 import FeaturedServicesDetail from "../sections/FeaturedServicesDetail";
 import Testimonials from "../sections/Testimonial";
-import Gallery from "../sections/Gallery";
+
 import Contact from "../sections/Contact";
 
 const Home = () => (
@@ -13,7 +13,6 @@ const Home = () => (
     <CommonComplaints />
     <FeaturedServicesDetail />
     <Testimonials />
-    <Gallery />
     <Contact />
   </>
 );
