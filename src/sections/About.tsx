@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Quote } from "lucide-react";
 import Container from "../components/Container";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
@@ -56,14 +56,6 @@ const team = [
     bgColor: "bg-blue-600",
   },
   {
-    name: "Blessing Modupe Jacob-Ogenah",
-    role: "Clinic Manager",
-    category: "Executive & Management",
-    description: "Coordinates day-to-day operations, staff, and patient experience to keep the clinic running smoothly and efficiently.",
-    image: "/images/manager.jpg",
-    bgColor: "bg-blue-700",
-  },
-  {
     name: "Nwoba Kelechi Igwon",
     role: "Chief Physiotherapist",
     category: "Clinical Staff",
@@ -86,6 +78,14 @@ const team = [
     description: "Supports patient care under senior supervision, bringing fresh energy and up-to-date academic knowledge to treatment sessions.",
     image: "/images/physio-2.jpg",
     bgColor: "bg-emerald-600",
+  },
+  {
+    name: "Blessing Modupe Jacob-Ogenah",
+    role: "Clinic Manager",
+    category: "Administration & Technical Support",
+    description: "Coordinates day-to-day operations, staff, and patient experience to keep the clinic running smoothly and efficiently.",
+    image: "/images/manager.jpg",
+    bgColor: "bg-blue-700",
   },
   {
     name: "Ighomuaye Mamuzo Blessing",
@@ -403,6 +403,7 @@ const About = () => {
           <div className="mt-20 space-y-20">
             {teamCategories.map((category) => {
               const members = team.filter((m) => m.category === category);
+              const isExecutive = category === "Executive & Management";
 
               return (
                 <div key={category}>
@@ -419,40 +420,94 @@ const About = () => {
                     <div className="h-px flex-1 bg-slate-200" />
                   </motion.div>
 
-                  <div className={`grid gap-6 sm:grid-cols-2 
-                    ${members.length < 3 ? "mx-auto max-w-4xl lg:grid-cols-2" : "lg:grid-cols-3"}`}>
-                    {members.map((member, index) => (
-                      <motion.article
-                        key={member.name}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.15 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg"
-                      >
-                        <div className="relative aspect-[4/5] overflow-hidden">
+                  {/* Featured Leadership Spotlight for single executive */}
+                  {isExecutive && members.length === 1 ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.15 }}
+                      transition={{ duration: 0.6 }}
+                      className="overflow-hidden rounded-3xl bg-white shadow-lg"
+                    >
+                      <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
+                        <div className="relative h-80 lg:h-auto">
                           <img
-                            src={member.image}
-                            alt={member.name}
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            src={members[0].image}
+                            alt={members[0].name}
+                            className="h-full w-full object-cover"
                           />
-                          <div className={`absolute left-0 top-0 h-1 w-full ${member.bgColor}`} />
+                          <div className={`absolute left-0 top-0 h-1.5 w-full ${members[0].bgColor}`} />
+                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 lg:hidden">
+                            <p className="text-xs font-bold uppercase tracking-widest text-blue-300">
+                              {members[0].role}
+                            </p>
+                            <h3 className="mt-1 text-2xl font-bold text-white">
+                              {members[0].name}
+                            </h3>
+                          </div>
                         </div>
 
-                        <div className="p-6">
-                          <p className="text-xs font-bold uppercase tracking-[0.15em] text-blue-600">
-                            {member.role}
-                          </p>
-                          <h3 className="mt-2 text-xl font-bold text-slate-900">
-                            {member.name}
-                          </h3>
-                          <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                            {member.description}
-                          </p>
+                        <div className="flex items-center p-8 md:p-12">
+                          <div className="max-w-lg">
+                            <div className="hidden lg:block">
+                              <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
+                                {members[0].role}
+                              </p>
+                              <h3 className="mt-2 text-3xl font-bold text-slate-900">
+                                {members[0].name}
+                              </h3>
+                            </div>
+
+                            <p className="mt-6 text-lg leading-8 text-slate-600 lg:mt-8">
+                              {members[0].description}
+                            </p>
+
+                            <div className="mt-8 rounded-2xl bg-slate-50 p-6">
+                              <Quote className="h-8 w-8 text-blue-200" />
+                              <p className="mt-3 text-lg italic leading-8 text-slate-700">
+                                "Every patient who walks through our doors deserves not just treatment, but a genuine partnership in their recovery journey. That is the standard we live by."
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      </motion.article>
-                    ))}
-                  </div>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <div className={`grid gap-6 sm:grid-cols-2 
+                      ${members.length < 3 ? "mx-auto max-w-4xl lg:grid-cols-2" : "lg:grid-cols-3"}`}>
+                      {members.map((member, index) => (
+                        <motion.article
+                          key={member.name}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, amount: 0.15 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg"
+                        >
+                          <div className="relative aspect-[4/5] overflow-hidden">
+                            <img
+                              src={member.image}
+                              alt={member.name}
+                              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className={`absolute left-0 top-0 h-1 w-full ${member.bgColor}`} />
+                          </div>
+
+                          <div className="p-6">
+                            <p className="text-xs font-bold uppercase tracking-[0.15em] text-blue-600">
+                              {member.role}
+                            </p>
+                            <h3 className="mt-2 text-xl font-bold text-slate-900">
+                              {member.name}
+                            </h3>
+                            <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                              {member.description}
+                            </p>
+                          </div>
+                        </motion.article>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}
