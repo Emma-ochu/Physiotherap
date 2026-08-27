@@ -252,7 +252,7 @@ const About = () => {
               <img
                 src="/images/deines1.png"
                 alt="DE-INES Physiotherapy team at the clinic"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain object-center lg:object-cover"
               />
             </motion.div>
 
@@ -430,11 +430,11 @@ const About = () => {
                       className="overflow-hidden rounded-3xl bg-white shadow-lg"
                     >
                       <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                        <div className="relative h-80 lg:h-auto">
+                        <div className="relative h-[420px] overflow-hidden lg:h-aut">
                           <img
                             src={members[0].image}
                             alt={members[0].name}
-                            className="h-full w-full object-cover"
+                            className="h-full w-full object-cover object-top"
                           />
                           <div className={`absolute left-0 top-0 h-1.5 w-full ${members[0].bgColor}`} />
                           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 lg:hidden">
@@ -484,11 +484,11 @@ const About = () => {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg"
                         >
-                          <div className="relative aspect-[4/5] overflow-hidden">
+                          <div className="relative h-[430px] overflow-hidden sm:h-[460px] lg:h-[430px]">
                             <img
                               src={member.image}
                               alt={member.name}
-                              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                              className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className={`absolute left-0 top-0 h-1 w-full ${member.bgColor}`} />
                           </div>
