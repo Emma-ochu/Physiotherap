@@ -73,7 +73,7 @@ const team = [
   },
   {
     name: "Obamedo Celestina Osayamen",
-    role: "Intern Physiotherapist",
+    role: "Physiotherapist",
     category: "Clinical Staff",
     description: "Supports patient care under senior supervision, bringing fresh energy and up-to-date academic knowledge to treatment sessions.",
     image: "/images/physio-2.jpg",
@@ -250,7 +250,7 @@ const About = () => {
               className="h-96 overflow-hidden rounded-3xl lg:h-[460px]"
             >
               <img
-                src="/images/You.jpg"
+                src="/images/deines1.png"
                 alt="DE-INES Physiotherapy team at the clinic"
                 className="h-full w-full object-cover"
               />

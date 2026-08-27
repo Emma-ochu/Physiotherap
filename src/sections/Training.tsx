@@ -108,7 +108,7 @@ const Training = () => {
           <div className="relative">
             <div className="overflow-hidden rounded-[2rem] bg-white shadow-xl">
               <img
-                src="/images/training.jpg"
+                src="/images/training.png"
                 alt="Home Care Assistant Training at DE-INES"
                 className="h-[400px] w-full object-cover object-top sm:h-[500px] lg:h-[580px]"
               />

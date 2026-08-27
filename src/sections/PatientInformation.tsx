@@ -66,42 +66,64 @@ const PatientInformation = () => {
 
   return (
     <main className="bg-slate-100 min-h-screen">
-      {/* ===== HERO SECTION ===== */}
-      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-        <img
-          src="/images/clinic-waiting.jpg"
-          alt="Patient Information Background"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
+{/* ===== HERO SECTION ===== */}
+<section className="relative min-h-[620px] overflow-hidden bg-slate-950">
+  {/* Hero Image — same treatment as About page */}
+  <img
+    src="/images/deines.jpg"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-y-0 right-0 h-full w-full object-contain object-right opacity-70 md:w-[60%]"
+  />
 
-        <div className="absolute inset-0 bg-slate-950/75" />
+  {/* Dark gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/30" />
 
-        <Container>
-          <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-slate-300 md:text-sm">
-              Appointments & Guidelines
-            </p>
-            <h1 className="mt-3 text-4xl font-extrabold tracking-tight md:text-6xl">
-              Patient Information
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-white/80">
-              Everything you need to know before, during, and after your physiotherapy appointment
-            </p>
+  {/* Mobile overlay */}
+  <div className="absolute inset-0 bg-slate-950/35 md:hidden" />
 
-            <div className="mt-8 flex justify-center">
-              <a
-                href={WHATSAPP_BOOK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-red-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-lg transition hover:bg-red-600"
-              >
-                Book Appointment
-              </a>
-            </div>
-          </div>
-        </Container>
-      </section>
+  <Container>
+    <div className="relative z-10 flex min-h-[620px] items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        className="max-w-3xl py-24 text-white"
+      >
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
+          Appointments & Guidelines
+        </p>
 
+        <h1 className="mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
+          Patient Information
+        </h1>
+
+        <p className="mt-7 max-w-3xl text-base leading-8 text-white/85 md:text-lg md:leading-9">
+          Everything you need to know before, during, and after your
+          physiotherapy appointment.
+        </p>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          <a
+            href={WHATSAPP_BOOK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800"
+          >
+            Book Appointment
+          </a>
+
+          <Link
+            to="/faq"
+            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20"
+          >
+            Frequently Asked Questions
+          </Link>
+        </div>
+      </motion.div>
+    </div>
+  </Container>
+</section>
       {/* ===== CARD STACK CONTENT ===== */}
       <section className="py-12 md:py-16">
         <Container>
@@ -215,29 +237,32 @@ const PatientInformation = () => {
         </Container>
       </section>
 
-      {/* ===== CYAN CTA BANNER ===== */}
-      <section className="bg-cyan-500 py-16 text-white md:py-20">
-        <Container>
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-extrabold text-white md:text-5xl">
-              Ready to Book Your Appointment?
-            </h2>
-            <p className="mt-4 text-lg text-cyan-50">
-              Contact us today to schedule your physiotherapy session with our experienced team.
-            </p>
-            <div className="mt-8">
-              <a
-                href={WHATSAPP_BOOK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-red-500 px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-white shadow-md transition hover:bg-red-600"
-              >
-                Book an Appointment
-              </a>
-            </div>
-          </div>
-        </Container>
-      </section>
+{/* ===== CTA BANNER ===== */}
+<section className="bg-blue-700 py-16 text-white md:py-20">
+  <Container>
+    <div className="mx-auto max-w-4xl text-center">
+      <h2 className="text-3xl font-extrabold text-white md:text-5xl">
+        Ready to Book Your Appointment?
+      </h2>
+
+      <p className="mt-4 text-lg text-blue-100">
+        Contact us today to schedule your physiotherapy session with our
+        experienced team.
+      </p>
+
+      <div className="mt-8">
+        <a
+          href={WHATSAPP_BOOK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
+        >
+          Book an Appointment
+        </a>
+      </div>
+    </div>
+  </Container>
+</section>
     </main>
   );
 };
