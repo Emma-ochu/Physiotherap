@@ -7,6 +7,7 @@ import {
   PHONE_DISPLAY,
   PHONE_NUMBER,
   WHATSAPP_BOOK,
+  WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
 } from "../lib/whatsapp";
 
@@ -30,7 +31,7 @@ const contactInfo = [
   },
   {
     title: "WhatsApp",
-    value: `0803 612 5717`,
+    value: WHATSAPP_DISPLAY,
     href: WHATSAPP_BOOK,
     icon: MessageCircle,
   },
@@ -39,13 +40,20 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section id='contact' className='bg-slate-50 py-24'>
+    <section
+      id='contact'
+      aria-labelledby='contact-heading'
+      className='bg-slate-50 py-24'
+    >
       <Container>
         <div className='max-w-3xl'>
           <span className='text-sm font-semibold uppercase tracking-[0.2em] text-blue-700'>
             Contact Us
           </span>
-          <h2 className='mt-6 text-4xl font-bold text-slate-900 md:text-5xl'>
+          <h2
+            id='contact-heading'
+            className='mt-6 text-4xl font-bold text-slate-900 md:text-5xl'
+          >
             Book Your Appointment Today
           </h2>
           <p className='mt-6 text-lg leading-8 text-slate-600'>
@@ -56,23 +64,23 @@ const Contact = () => {
         </div>
 
         <div className='mt-20 grid gap-12 lg:grid-cols-2'>
-          <div className='space-y-4'>
+          <div className='space-y-4' aria-label='DE-INES contact details'>
             {contactInfo.map((item) => {
               const Icon = item.icon;
+              const isExternal = item.href.startsWith("http");
               return (
                 <a
                   key={item.title}
                   href={item.href}
-                  target={item.href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    item.href.startsWith("http") ?
-                      "noopener noreferrer"
-                    : undefined
-                  }
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
                   className='block rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-200'
                 >
                   <div className='flex items-start gap-5 p-6'>
-                    <div className='flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700'>
+                    <div
+                      className='flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-700'
+                      aria-hidden='true'
+                    >
                       <Icon className='h-7 w-7' />
                     </div>
                     <div>
@@ -90,11 +98,11 @@ const Contact = () => {
           </div>
 
           <form
+            aria-label='Contact DE-INES Physiotherapy on WhatsApp'
             className='rounded-3xl bg-white p-8 shadow-lg'
             onSubmit={(e) => {
               e.preventDefault();
-              const form = e.currentTarget;
-              const data = new FormData(form);
+              const data = new FormData(e.currentTarget);
               const whatsappMessage = encodeURIComponent(
                 `Hello, I would like to book an appointment at DE-INES Physiotherapy.\n\nName: ${data.get("name")}\nPhone: ${data.get("phone")}\n\nMessage:\n${data.get("message")}`,
               );
@@ -182,7 +190,7 @@ const Contact = () => {
               rel='noopener noreferrer'
               className='inline-flex items-center gap-2 text-sm font-semibold text-blue-700 transition hover:text-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-200'
             >
-              <MapPin className='h-4 w-4' />
+              <MapPin className='h-4 w-4' aria-hidden='true' />
               Open Head Office in Google Maps
             </a>
           </div>

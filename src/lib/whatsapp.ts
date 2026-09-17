@@ -1,5 +1,6 @@
 /** Shared contact and booking details for DE-INES Physiotherapy. */
 export const WHATSAPP_NUMBER = "2348036125717";
+export const WHATSAPP_DISPLAY = "0803 612 5717";
 export const PHONE_NUMBER = "+2349160803314";
 export const PHONE_DISPLAY = "0916 080 3314";
 export const EMAIL = "consultdeinesphysiotherapy@gmail.com";
