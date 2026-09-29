@@ -51,7 +51,7 @@ const Training = () => {
               <img
                 src='/images/training.png'
                 alt='Home Care Assistant Training at DE-INES'
-                className='absolute inset-0 h-full w-full object-cover opacity-70'
+                className='absolute inset-0 h-full w-full object-scale-down opacity-70'
               />
               <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-900/40' />
 
