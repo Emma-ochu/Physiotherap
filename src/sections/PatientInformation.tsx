@@ -65,89 +65,106 @@ const PatientInformation = () => {
   ];
 
   return (
-    <main className="bg-slate-100 min-h-screen">
-{/* ===== HERO SECTION ===== */}
-<section className="relative min-h-[620px] overflow-hidden bg-slate-950">
-  {/* Hero Image — same treatment as About page */}
-  <img
-    src="/images/deines.jpg"
-    alt=""
-    aria-hidden="true"
-    className="absolute inset-y-0 right-0 h-full w-full object-contain object-right opacity-70 md:w-[60%]"
-  />
-
-  {/* Dark gradient overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/30" />
-
-  {/* Mobile overlay */}
-  <div className="absolute inset-0 bg-slate-950/35 md:hidden" />
-
-  <Container>
-    <div className="relative z-10 flex min-h-[620px] items-center">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-3xl py-24 text-white"
-      >
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-blue-300">
-          Appointments & Guidelines
-        </p>
-
-        <h1 className="mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl">
-          Patient Information
-        </h1>
-
-        <p className="mt-7 max-w-3xl text-base leading-8 text-white/85 md:text-lg md:leading-9">
-          Everything you need to know before, during, and after your
-          physiotherapy appointment.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-4">
-          <a
-            href={WHATSAPP_BOOK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800"
-          >
-            Book Appointment
-          </a>
-
-          <Link
-            to="/faq"
-            className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20"
-          >
-            Frequently Asked Questions
-          </Link>
+    <>
+      {/* ===== HERO SECTION ===== */}
+      <section className='relative min-h-[620px] overflow-hidden bg-slate-950'>
+        <div className='absolute inset-y-0 right-0 w-full md:w-[62%]'>
+          <img
+            src='/images/deines1.png'
+            alt='DE-INES physiotherapy clinic'
+            className='h-full w-full object-cover object-center md:object-right'
+          />
         </div>
-      </motion.div>
-    </div>
-  </Container>
-</section>
-      {/* ===== CARD STACK CONTENT ===== */}
-      <section className="py-12 md:py-16">
+
+        <div className='absolute inset-0 bg-slate-950/75' />
+        <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25' />
+
         <Container>
-          <div className="mx-auto max-w-4xl space-y-8">
+          <div className='relative z-10 flex min-h-[620px] items-center'>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className='max-w-3xl py-20 text-white md:py-24'
+            >
+              <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-200'>
+                Appointments & Guidelines
+              </p>
+
+              <h1 className='mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl'>
+                Patient Information
+              </h1>
+
+              <p className='mt-7 max-w-3xl text-base leading-8 text-slate-200 md:text-lg md:leading-9'>
+                Everything you need to know before, during, and after your
+                physiotherapy appointment.
+              </p>
+
+              <div className='mt-10 flex flex-wrap gap-4'>
+                <a
+                  href={WHATSAPP_BOOK}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800'
+                >
+                  Book Appointment
+                </a>
+
+                <Link
+                  to='/faq'
+                  className='inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20'
+                >
+                  Frequently Asked Questions
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
+      <section className='bg-slate-50 py-7'>
+        <Container>
+          <div className='flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm md:gap-8 md:px-10'>
+            {[
+              "Before your visit",
+              "During your visit",
+              "After your visit",
+              "Clear guidance",
+            ].map((item) => (
+              <span key={item} className='text-sm font-semibold text-slate-600'>
+                {item}
+              </span>
+            ))}
+          </div>
+        </Container>
+      </section>
+      {/* ===== CARD STACK CONTENT ===== */}
+      <section className='py-12 md:py-16'>
+        <Container>
+          <div className='mx-auto max-w-4xl space-y-8'>
             {/* Before Your Visit */}
             <motion.div
               variants={slideFromLeft}
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="rounded-xl bg-white p-8 shadow-sm md:p-10"
+              className='rounded-xl bg-white p-8 shadow-sm md:p-10'
             >
-              <h2 className="text-2xl font-bold text-slate-800 md:text-3xl">
+              <h2 className='text-2xl font-bold text-slate-800 md:text-3xl'>
                 Before Your Visit
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
-                To help us provide you with the best care, here's what you should know and prepare before your appointment.
+              <p className='mt-4 leading-relaxed text-slate-600'>
+                To help us provide you with the best care, here's what you
+                should know and prepare before your appointment.
               </p>
-              <ul className="mt-6 space-y-4">
+              <ul className='mt-6 space-y-4'>
                 {preVisitInfo.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-700" />
-                    <span className="leading-relaxed text-slate-600">{item}</span>
+                  <li key={index} className='flex items-start gap-3'>
+                    <CheckCircle2 className='mt-1 h-5 w-5 shrink-0 text-emerald-700' />
+                    <span className='leading-relaxed text-slate-600'>
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -156,23 +173,27 @@ const PatientInformation = () => {
             {/* During Your Visit */}
             <motion.div
               variants={slideFromRight}
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="rounded-xl bg-white p-8 shadow-sm md:p-10"
+              className='rounded-xl bg-white p-8 shadow-sm md:p-10'
             >
-              <h2 className="text-2xl font-bold text-slate-800 md:text-3xl">
+              <h2 className='text-2xl font-bold text-slate-800 md:text-3xl'>
                 What to Expect During Your Visit
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
-                Your first appointment is an opportunity to meet your physiotherapist and develop a treatment plan tailored to your needs.
+              <p className='mt-4 leading-relaxed text-slate-600'>
+                Your first appointment is an opportunity to meet your
+                physiotherapist and develop a treatment plan tailored to your
+                needs.
               </p>
-              <ul className="mt-6 space-y-4">
+              <ul className='mt-6 space-y-4'>
                 {duringVisit.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-700" />
-                    <span className="leading-relaxed text-slate-600">{item}</span>
+                  <li key={index} className='flex items-start gap-3'>
+                    <CheckCircle2 className='mt-1 h-5 w-5 shrink-0 text-emerald-700' />
+                    <span className='leading-relaxed text-slate-600'>
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -181,23 +202,26 @@ const PatientInformation = () => {
             {/* After Your Visit */}
             <motion.div
               variants={slideFromLeft}
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="rounded-xl bg-white p-8 shadow-sm md:p-10"
+              className='rounded-xl bg-white p-8 shadow-sm md:p-10'
             >
-              <h2 className="text-2xl font-bold text-slate-800 md:text-3xl">
+              <h2 className='text-2xl font-bold text-slate-800 md:text-3xl'>
                 After Your Visit
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
-                Your physiotherapy journey continues between appointments. Here's how to get the most from your treatment.
+              <p className='mt-4 leading-relaxed text-slate-600'>
+                Your physiotherapy journey continues between appointments.
+                Here's how to get the most from your treatment.
               </p>
-              <ul className="mt-6 space-y-4">
+              <ul className='mt-6 space-y-4'>
                 {afterVisit.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-emerald-700" />
-                    <span className="leading-relaxed text-slate-600">{item}</span>
+                  <li key={index} className='flex items-start gap-3'>
+                    <CheckCircle2 className='mt-1 h-5 w-5 shrink-0 text-emerald-700' />
+                    <span className='leading-relaxed text-slate-600'>
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -206,29 +230,34 @@ const PatientInformation = () => {
             {/* Quick Questions */}
             <motion.div
               variants={slideFromRight}
-              initial="hidden"
-              whileInView="visible"
+              initial='hidden'
+              whileInView='visible'
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="rounded-xl bg-white p-8 shadow-sm md:p-10"
+              className='rounded-xl bg-white p-8 shadow-sm md:p-10'
             >
-              <h2 className="text-2xl font-bold text-slate-800 md:text-3xl">
+              <h2 className='text-2xl font-bold text-slate-800 md:text-3xl'>
                 Quick Questions
               </h2>
-              <p className="mt-4 leading-relaxed text-slate-600">
+              <p className='mt-4 leading-relaxed text-slate-600'>
                 For more detailed FAQs, visit our{" "}
-                <Link to="/faq" className="font-semibold text-red-500 underline hover:text-red-600">
+                <Link
+                  to='/faq'
+                  className='font-semibold text-red-500 underline hover:text-red-600'
+                >
                   FAQ page
                 </Link>
                 .
               </p>
-              <div className="mt-6 space-y-6">
+              <div className='mt-6 space-y-6'>
                 {faqs.map((faq, index) => (
                   <div key={index}>
-                    <h3 className="text-xl font-semibold text-slate-700">
+                    <h3 className='text-xl font-semibold text-slate-700'>
                       {faq.q}
                     </h3>
-                    <p className="mt-2 leading-relaxed text-slate-600">{faq.a}</p>
+                    <p className='mt-2 leading-relaxed text-slate-600'>
+                      {faq.a}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -237,33 +266,33 @@ const PatientInformation = () => {
         </Container>
       </section>
 
-{/* ===== CTA BANNER ===== */}
-<section className="bg-blue-700 py-16 text-white md:py-20">
-  <Container>
-    <div className="mx-auto max-w-4xl text-center">
-      <h2 className="text-3xl font-extrabold text-white md:text-5xl">
-        Ready to Book Your Appointment?
-      </h2>
+      {/* ===== CTA BANNER ===== */}
+      <section className='bg-blue-700 py-16 text-white md:py-20'>
+        <Container>
+          <div className='mx-auto max-w-4xl text-center'>
+            <h2 className='text-3xl font-extrabold text-white md:text-5xl'>
+              Ready to Book Your Appointment?
+            </h2>
 
-      <p className="mt-4 text-lg text-blue-100">
-        Contact us today to schedule your physiotherapy session with our
-        experienced team.
-      </p>
+            <p className='mt-4 text-lg text-blue-100'>
+              Contact us today to schedule your physiotherapy session with our
+              experienced team.
+            </p>
 
-      <div className="mt-8">
-        <a
-          href={WHATSAPP_BOOK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center rounded-full bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50"
-        >
-          Book an Appointment
-        </a>
-      </div>
-    </div>
-  </Container>
-</section>
-    </main>
+            <div className='mt-8'>
+              <a
+                href={WHATSAPP_BOOK}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center rounded-full bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50'
+              >
+                Book an Appointment
+              </a>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 };
 

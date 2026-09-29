@@ -143,48 +143,51 @@ const FAQSection = () => {
   ];
 
   return (
-    <main className="bg-white">
+    <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-        <div className="absolute inset-0 bg-blue-950/30" />
+      <section className='relative overflow-hidden bg-slate-950 py-24 md:py-32'>
+        <div className='absolute inset-0 bg-blue-950/30' />
         <Container>
-          <div className="relative z-10 mx-auto max-w-4xl text-center text-white">
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+          <div className='relative z-10 mx-auto max-w-4xl text-center text-white'>
+            <h1 className='text-4xl font-bold leading-tight md:text-6xl'>
               Frequently Asked Questions
             </h1>
-            <p className="mt-6 text-lg leading-8 text-white/80">
-              Find answers to common questions about our services, treatment, and how to get started
+            <p className='mt-6 text-lg leading-8 text-white/80'>
+              Find answers to common questions about our services, treatment,
+              and how to get started
             </p>
           </div>
         </Container>
       </section>
 
       {/* FAQ Sections */}
-      <section className="py-20 md:py-28">
+      <section className='py-20 md:py-28'>
         <Container>
-          <div className="mx-auto max-w-5xl">
+          <div className='mx-auto max-w-5xl'>
             {categories.map((category) => {
-              const categoryFaqs = faqs.filter((faq) => faq.category === category);
+              const categoryFaqs = faqs.filter(
+                (faq) => faq.category === category,
+              );
               return (
-                <div key={category} className="mb-16">
-                  <h2 className="mb-8 text-2xl font-bold text-slate-900">
+                <div key={category} className='mb-16'>
+                  <h2 className='mb-8 text-2xl font-bold text-slate-900'>
                     {category}
                   </h2>
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
                     {categoryFaqs.map((faq) => (
                       <motion.div
                         key={faq.id}
                         variants={cardVariants}
-                        initial="hidden"
-                        whileInView="visible"
+                        initial='hidden'
+                        whileInView='visible'
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+                        className='rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm'
                       >
-                        <h3 className="text-lg font-semibold text-slate-900">
+                        <h3 className='text-lg font-semibold text-slate-900'>
                           {faq.question}
                         </h3>
-                        <p className="mt-3 leading-relaxed text-slate-600">
+                        <p className='mt-3 leading-relaxed text-slate-600'>
                           {faq.answer}
                         </p>
                       </motion.div>
@@ -198,27 +201,28 @@ const FAQSection = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-slate-50 py-20 md:py-28">
+      <section className='bg-slate-50 py-20 md:py-28'>
         <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
+          <div className='mx-auto max-w-3xl text-center'>
+            <h2 className='text-3xl font-bold text-slate-900 md:text-4xl'>
               Still Have Questions?
             </h2>
-            <p className="mt-6 text-lg text-slate-600">
-              Didn't find what you're looking for? Our team is here to help. Get in touch with us directly.
+            <p className='mt-6 text-lg text-slate-600'>
+              Didn't find what you're looking for? Our team is here to help. Get
+              in touch with us directly.
             </p>
             <a
               href={WHATSAPP_BOOK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 font-bold text-white shadow-lg transition hover:bg-blue-800"
+              target='_blank'
+              rel='noopener noreferrer'
+              className='mt-8 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 font-bold text-white shadow-lg transition hover:bg-blue-800'
             >
               Contact Us
             </a>
           </div>
         </Container>
       </section>
-    </main>
+    </>
   );
 };
 

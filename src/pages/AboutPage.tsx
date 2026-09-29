@@ -1,10 +1,10 @@
 import About from "../sections/About";
-// import Gallery from "../sections/Gallery";
+import Gallery from "../sections/Gallery";
 
 const AboutPage = () => (
   <>
-  <About/>
-  {/* <Gallery/> */}
+    <About />
+    <Gallery />
   </>
 );
 
