@@ -6,54 +6,56 @@ const trustItems = [
     icon: ShieldCheck,
     title: "Professional Care",
     description:
-      "Qualified physiotherapy professionals focused on safe, patient-centred rehabilitation.",
+      "Safe, accountable rehabilitation led by clinicians focused on real recovery outcomes.",
   },
   {
     icon: HeartPulse,
     title: "Evidence-Based Practice",
     description:
-      "Professional assessment and treatment tailored to each patient's needs and recovery goals.",
+      "Personalized treatment plans shaped by assessment, progress, and patient goals.",
   },
   {
     icon: Users,
-    title: "Patient-Centred Approach",
+    title: "Patient-Centred Support",
     description:
-      "Individual attention and ongoing support throughout your rehabilitation journey.",
+      "Guidance, encouragement, and continuity throughout every stage of your healing journey.",
   },
 ];
 
 const TrustBar = () => {
   return (
-    <section className="border-y border-slate-100 bg-white">
+    <section className='bg-white py-3'>
       <Container>
-        <div className="grid divide-y divide-slate-100 py-6 md:grid-cols-3 md:divide-x md:divide-y-0 md:py-8">
-          {trustItems.map((item) => {
-            const Icon = item.icon;
+        <div className='overflow-hidden rounded-[28px] border border-slate-200 bg-slate-50 shadow-[0_18px_35px_rgba(15,23,42,0.04)]'>
+          <div className='grid gap-0 md:grid-cols-3'>
+            {trustItems.map((item) => {
+              const Icon = item.icon;
 
-            return (
-              <div
-                key={item.title}
-                className="group flex items-start gap-4 px-4 py-5 transition duration-300 md:px-8 md:first:pl-0 md:last:pr-0"
-              >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 transition duration-300 group-hover:bg-blue-700">
-                  <Icon
-                    className="h-6 w-6 text-blue-700 transition duration-300 group-hover:text-white"
-                    strokeWidth={1.8}
-                  />
+              return (
+                <div
+                  key={item.title}
+                  className='group flex items-start gap-4 border-b border-slate-200 px-5 py-6 transition duration-300 last:border-b-0 md:border-b-0 md:border-r md:px-7 md:py-8 md:last:border-r-0'
+                >
+                  <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-100 transition duration-300 group-hover:bg-blue-700'>
+                    <Icon
+                      className='h-5 w-5 text-blue-700 transition duration-300 group-hover:text-white'
+                      strokeWidth={1.8}
+                    />
+                  </div>
+
+                  <div>
+                    <h3 className='text-base font-bold text-slate-900'>
+                      {item.title}
+                    </h3>
+
+                    <p className='mt-2 text-sm leading-6 text-slate-600'>
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-
-                <div>
-                  <h3 className="font-semibold text-slate-900">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-1 text-sm leading-6 text-slate-500">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>

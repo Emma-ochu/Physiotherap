@@ -5,6 +5,25 @@
   --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
+:root {
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top, rgba(147, 197, 253, 0.22), transparent 20%),
+    #f8fafc;
+  color: #0f172a;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
