@@ -51,26 +51,24 @@ const Testimonials = () => {
       .toUpperCase();
 
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-white py-20 md:py-28">
       <Container>
-        {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="inline-block rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-700">
+          <span className="text-sm font-bold uppercase tracking-[0.2em] text-blue-700">
             Testimonials
           </span>
 
-          <h2 className="mt-6 text-4xl font-bold text-slate-900 md:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold text-slate-900 md:text-5xl">
             What Our Patients Say
           </h2>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600">
+          <p className="mt-5 text-base leading-7 text-slate-600 md:text-lg md:leading-8">
             We are committed to delivering compassionate care and helping every
             patient achieve the best possible recovery at our Benin City clinic.
           </p>
         </div>
 
-        {/* Testimonial Cards */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:mt-14 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -82,7 +80,7 @@ const Testimonials = () => {
                 delay: index * 0.1,
                 ease: "easeOut",
               }}
-              className="group relative flex flex-col rounded-3xl border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative flex flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl md:p-8"
             >
               {/* Quote icon */}
               <Quote

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
-import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 interface FAQItem {
   id: string;
@@ -211,14 +211,12 @@ const FAQSection = () => {
               Didn't find what you're looking for? Our team is here to help. Get
               in touch with us directly.
             </p>
-            <a
-              href={WHATSAPP_BOOK}
-              target='_blank'
-              rel='noopener noreferrer'
+            <Link
+              to='/contact#contact-form'
               className='mt-8 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 font-bold text-white shadow-lg transition hover:bg-blue-800'
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </Container>
       </section>

@@ -43,28 +43,28 @@ const Contact = () => {
     <section
       id='contact'
       aria-labelledby='contact-heading'
-      className='bg-slate-50 py-24'
+      className='bg-slate-50 py-20 md:py-28'
     >
       <Container>
-        <div className='max-w-3xl'>
-          <span className='text-sm font-semibold uppercase tracking-[0.2em] text-blue-700'>
+        <div className='mx-auto max-w-3xl text-center'>
+          <span className='text-sm font-bold uppercase tracking-[0.2em] text-blue-700'>
             Contact Us
           </span>
           <h2
             id='contact-heading'
-            className='mt-6 text-4xl font-bold text-slate-900 md:text-5xl'
+            className='mt-4 text-3xl font-bold text-slate-900 md:text-5xl'
           >
             Book Your Appointment Today
           </h2>
-          <p className='mt-6 text-lg leading-8 text-slate-600'>
+          <p className='mt-5 text-base leading-7 text-slate-600 md:text-lg md:leading-8'>
             Ready to begin your recovery journey? Contact DE-INES Physiotherapy
             & Sports Injury Consult to book an appointment, inquire about our
             services, or enroll in our Home Care Assistant Training program.
           </p>
         </div>
 
-        <div className='mt-20 grid gap-12 lg:grid-cols-2'>
-          <div className='space-y-4' aria-label='DE-INES contact details'>
+        <div className='mt-12 grid min-w-0 gap-8 lg:grid-cols-2 lg:gap-10'>
+          <div className='min-w-0 space-y-4' aria-label='DE-INES contact details'>
             {contactInfo.map((item) => {
               const Icon = item.icon;
               const isExternal = item.href.startsWith("http");
@@ -83,11 +83,11 @@ const Contact = () => {
                     >
                       <Icon className='h-7 w-7' />
                     </div>
-                    <div>
+                    <div className='min-w-0 flex-1'>
                       <h3 className='font-semibold text-slate-900'>
                         {item.title}
                       </h3>
-                      <p className='mt-1 leading-7 text-slate-600'>
+                      <p className='mt-1 break-words leading-7 text-slate-600 [overflow-wrap:anywhere]'>
                         {item.value}
                       </p>
                     </div>
@@ -98,8 +98,9 @@ const Contact = () => {
           </div>
 
           <form
+            id='contact-form'
             aria-label='Contact DE-INES Physiotherapy on WhatsApp'
-            className='rounded-3xl bg-white p-8 shadow-lg'
+            className='min-w-0 scroll-mt-32 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8'
             onSubmit={(e) => {
               e.preventDefault();
               const data = new FormData(e.currentTarget);
@@ -164,7 +165,7 @@ const Contact = () => {
           </form>
         </div>
 
-        <div className='mt-16 overflow-hidden rounded-3xl shadow-xl'>
+        <div className='mt-12 overflow-hidden rounded-3xl border border-slate-200 shadow-sm md:mt-16'>
           <div className='border-b border-slate-200 bg-white px-6 py-5'>
             <h3 className='text-lg font-semibold text-slate-900'>
               Find Our Head Office

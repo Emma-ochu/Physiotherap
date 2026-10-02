@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
-import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 const values = [
   {
@@ -674,15 +673,13 @@ const About = () => {
               Take the first step toward better movement, improved function, and
               a stronger recovery.
             </p>
-            <a
-              href={WHATSAPP_BOOK}
-              target='_blank'
-              rel='noopener noreferrer'
+            <Link
+              to='/contact#contact-form'
               className='mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-4 font-bold text-blue-700 transition hover:bg-blue-50'
             >
               Book an Appointment
               <ArrowRight className='h-5 w-5' />
-            </a>
+            </Link>
           </motion.div>
         </Container>
       </section>

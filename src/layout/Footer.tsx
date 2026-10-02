@@ -245,14 +245,12 @@ const Footer = () => {
               </li>
             </ul>
 
-            <a
-              href='https://wa.me/2348036125717?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20at%20DE-INES%20Physiotherapy.'
-              target='_blank'
-              rel='noopener noreferrer'
+            <NavLink
+              to='/contact#contact-form'
               className='mt-6 inline-block rounded-xl bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-600'
             >
               Book Appointment
-            </a>
+            </NavLink>
           </div>
         </div>
 

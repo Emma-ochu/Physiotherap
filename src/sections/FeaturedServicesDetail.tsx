@@ -55,6 +55,8 @@ const FeaturedServicesDetail = () => {
                   <img
                     src={serviceImages[service.slug] ?? "/images/deines.jpg"}
                     alt={service.title}
+                    loading='lazy'
+                    decoding='async'
                     className='h-full w-full object-cover'
                   />
                   <div className='absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/10 to-transparent' />

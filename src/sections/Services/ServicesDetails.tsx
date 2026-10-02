@@ -1,7 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../../components/Container";
-import { WHATSAPP_BOOK } from "../../lib/whatsapp";
 import type { Service } from "./servicesData";
 
 interface ServicesDetailsProps {
@@ -33,15 +32,13 @@ const ServicesDetails = ({ service }: ServicesDetailsProps) => {
               {service.heroDescription}
             </p>
 
-            <a
-              href={WHATSAPP_BOOK}
-              target='_blank'
-              rel='noopener noreferrer'
+            <Link
+              to='/contact#contact-form'
               className='mt-8 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-blue-800'
             >
               Book an Appointment
               <ArrowRight className='h-4 w-4' />
-            </a>
+            </Link>
           </div>
         </Container>
       </section>
@@ -151,15 +148,13 @@ const ServicesDetails = ({ service }: ServicesDetailsProps) => {
               physiotherapy journey.
             </p>
 
-            <a
-              href={WHATSAPP_BOOK}
-              target='_blank'
-              rel='noopener noreferrer'
+            <Link
+              to='/contact#contact-form'
               className='mt-8 inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:bg-slate-100'
             >
               Book Now
               <ArrowRight className='h-4 w-4' />
-            </a>
+            </Link>
           </div>
         </Container>
       </section>

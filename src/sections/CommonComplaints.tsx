@@ -50,7 +50,7 @@ const CommonComplaints = () => {
   ];
 
   return (
-    <section className='bg-slate-50 py-20 md:py-28'>
+    <section className='bg-white py-20 md:py-28'>
       <Container>
         <div className='mb-14 text-center md:mb-16'>
           <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-700'>
@@ -76,6 +76,8 @@ const CommonComplaints = () => {
                 <img
                   src={complaint.image}
                   alt={complaint.title}
+                  loading='lazy'
+                  decoding='async'
                   className='h-full w-full object-cover transition duration-500 group-hover:scale-105'
                 />
                 <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/10 to-transparent' />

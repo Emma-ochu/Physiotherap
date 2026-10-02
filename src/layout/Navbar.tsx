@@ -10,7 +10,6 @@ import {
   Minus,
 } from "lucide-react";
 import Container from "../components/Container";
-import { WHATSAPP_BOOK } from "../lib/whatsapp";
 
 /* Shared desktop-link classes */
 const linkBase =
@@ -286,15 +285,13 @@ const Navbar = () => {
               </NavLink>
             </nav>
 
-            <a
-              href={WHATSAPP_BOOK}
-              target='_blank'
-              rel='noopener noreferrer'
+            <NavLink
+              to='/contact#contact-form'
               className='hidden items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-[0_12px_25px_rgba(37,99,235,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-[0_16px_30px_rgba(37,99,235,0.32)] lg:inline-flex'
             >
               <Calendar className='h-4 w-4' />
               Book Appointment
-            </a>
+            </NavLink>
 
             {!menuOpen && (
               <button
@@ -496,16 +493,14 @@ const Navbar = () => {
                 FAQ
               </NavLink>
 
-              <a
-                href={WHATSAPP_BOOK}
-                target='_blank'
-                rel='noopener noreferrer'
+              <NavLink
+                to='/contact#contact-form'
                 onClick={closeMenu}
                 className='mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-4 text-center text-sm font-bold text-white shadow-[0_12px_25px_rgba(37,99,235,0.28)] transition hover:bg-blue-700'
               >
                 <Calendar className='h-4 w-4' />
                 Book Appointment
-              </a>
+              </NavLink>
             </nav>
           </div>
         </>

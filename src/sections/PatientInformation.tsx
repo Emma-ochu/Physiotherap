@@ -1,7 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Container from "../components/Container";
-import { WHATSAPP_BOOK } from "../lib/whatsapp";
 import { Link } from "react-router-dom";
 
 const slideFromLeft = {
@@ -101,14 +100,12 @@ const PatientInformation = () => {
               </p>
 
               <div className='mt-10 flex flex-wrap gap-4'>
-                <a
-                  href={WHATSAPP_BOOK}
-                  target='_blank'
-                  rel='noopener noreferrer'
+                <Link
+                  to='/contact#contact-form'
                   className='inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800'
                 >
                   Book Appointment
-                </a>
+                </Link>
 
                 <Link
                   to='/faq'
@@ -280,14 +277,12 @@ const PatientInformation = () => {
             </p>
 
             <div className='mt-8'>
-              <a
-                href={WHATSAPP_BOOK}
-                target='_blank'
-                rel='noopener noreferrer'
+              <Link
+                to='/contact#contact-form'
                 className='inline-flex items-center rounded-full bg-white px-8 py-3.5 text-sm font-bold uppercase tracking-wider text-blue-700 shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-50'
               >
                 Book an Appointment
-              </a>
+              </Link>
             </div>
           </div>
         </Container>
