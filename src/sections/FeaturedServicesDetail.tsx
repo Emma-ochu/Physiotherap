@@ -24,7 +24,7 @@ const FeaturedServicesDetail = () => {
           <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-700'>
             Our Services
           </p>
-          <h2 className='mt-4 text-3xl font-bold text-slate-900 md:text-5xl'>
+          <h2 className='mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 md:text-5xl'>
             Rehabilitation built around your goals
           </h2>
           <p className='mx-auto mt-6 max-w-2xl text-lg text-slate-600'>
@@ -38,7 +38,7 @@ const FeaturedServicesDetail = () => {
           {featuredServices.map((service, index) => (
             <article
               key={service.slug}
-              className='overflow-hidden rounded-[30px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.10)]'
+              className='overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.10)]'
             >
               <div
                 className={`grid gap-0 ${

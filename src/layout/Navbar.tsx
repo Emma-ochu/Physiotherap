@@ -86,7 +86,7 @@ const Navbar = () => {
 
   return (
     <header className='sticky top-0 z-50'>
-      <div className='hidden bg-slate-950 md:block'>
+      <div className='hidden bg-[#0a1d3b] md:block'>
         <Container>
           <div className='flex h-11 items-center justify-between'>
             <span className='text-xs font-medium text-slate-300'>
@@ -131,7 +131,7 @@ const Navbar = () => {
         className={`border-b border-slate-200/80 bg-white/95 transition-all duration-300 ${
           scrolled ?
             "shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl"
-          : "shadow-sm"
+          : "shadow-[0_1px_0_rgba(15,23,42,0.04)]"
         }`}
       >
         <Container>
@@ -296,11 +296,11 @@ const Navbar = () => {
             {!menuOpen && (
               <button
                 onClick={() => setMenuOpen((open) => !open)}
-                className='relative z-50 rounded-full p-2.5 text-slate-700 transition hover:bg-slate-100 lg:hidden'
+                className='relative z-50 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-700 text-white shadow-[0_12px_20px_rgba(29,78,216,0.25)] transition hover:bg-blue-800 lg:hidden'
                 aria-label='Open menu'
                 aria-expanded={false}
               >
-                <Menu className='h-6 w-6' />
+                <Menu className='h-5 w-5' />
               </button>
             )}
           </div>

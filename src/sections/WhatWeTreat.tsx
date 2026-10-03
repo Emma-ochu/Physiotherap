@@ -5,32 +5,32 @@ import Container from "../components/Container";
 const treatments = [
   {
     title: "Low Back Pain",
-    image: "/images/low-back-pain.jpg",
+    image: "/images/low-back-pain.png",
     to: "/services/musculoskeletal",
   },
   {
     title: "Neck & Head Pain",
-    image: "/images/neck-head-pain.jpg",
+    image: "/images/neck-head-pain.png",
     to: "/services/musculoskeletal",
   },
   {
     title: "Shoulder Pain",
-    image: "/images/shoulder-pain.jpg",
+    image: "/images/shoulder-pain.png",
     to: "/services/orthopaedic-rehabilitation",
   },
   {
     title: "Ankle & Foot Pain",
-    image: "/images/ankle-foot-pain.jpg",
+    image: "/images/ankle-pain.png",
     to: "/services/sports",
   },
   {
     title: "Knee Pain",
-    image: "/images/knee-pain.jpg",
+    image: "/images/knee-pain.png",
     to: "/services/orthopaedic-rehabilitation",
   },
   {
     title: "Muscle Pain",
-    image: "/images/muscle-pain.jpg",
+    image: "/images/muscle-pain.png",
     to: "/services/sports",
   },
 ];

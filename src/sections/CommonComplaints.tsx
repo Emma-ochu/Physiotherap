@@ -13,37 +13,37 @@ const CommonComplaints = () => {
   const complaints: Complaint[] = [
     {
       title: "Knee Pain",
-      image: "/images/knee-pain.jpg",
+      image: "/images/knee-pain.png",
       summary: "Affecting walking, stairs, squatting, and active movement.",
       slug: "knee-pain",
     },
     {
       title: "Low Back Pain",
-      image: "/images/low-back-pain.jpg",
+      image: "/images/low-back-pain.png",
       summary: "Often linked to posture, strain, or long sitting and lifting.",
       slug: "low-back-pain",
     },
     {
       title: "Neck & Head Pain",
-      image: "/images/neck-head-pain.jpg",
+      image: "/images/neck-head-pain.png",
       summary: "Common from tension, posture, and nerve irritation.",
       slug: "neck-pain",
     },
     {
       title: "Shoulder Pain",
-      image: "/images/shoulder-pain.jpg",
+      image: "/images/shoulder-pain.png",
       summary: "Often caused by overuse, stiffness, or rotator cuff strain.",
       slug: "shoulder-pain",
     },
     {
       title: "Muscle Pain",
-      image: "/images/muscle-pain.jpg",
+      image: "/images/muscle-pain.png",
       summary: "Usually tied to tightness, recovery, or exercise overload.",
       slug: "muscle-pain",
     },
     {
       title: "Ankle & Foot Pain",
-      image: "/images/ankle-foot-pain.jpg",
+      image: "/images/ankle-pain.png",
       summary: "Can slow walking, standing, and sports participation.",
       slug: "ankle-foot-pain",
     },
@@ -56,7 +56,7 @@ const CommonComplaints = () => {
           <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-700'>
             Common Conditions
           </p>
-          <h2 className='mt-4 text-3xl font-bold text-slate-900 md:text-5xl'>
+          <h2 className='mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 md:text-5xl'>
             Pain areas we help people recover from
           </h2>
           <p className='mx-auto mt-6 max-w-2xl text-lg text-slate-600'>
@@ -72,7 +72,7 @@ const CommonComplaints = () => {
               to='/what-we-treat'
               className='group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(15,23,42,0.10)]'
             >
-              <div className='relative h-52 overflow-hidden'>
+              <div className='relative h-60 overflow-hidden'>
                 <img
                   src={complaint.image}
                   alt={complaint.title}
@@ -80,7 +80,7 @@ const CommonComplaints = () => {
                   decoding='async'
                   className='h-full w-full object-cover transition duration-500 group-hover:scale-105'
                 />
-                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/10 to-transparent' />
+                <div className='absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-900/15 to-transparent' />
               </div>
 
               <div className='p-6'>
@@ -88,7 +88,7 @@ const CommonComplaints = () => {
                   Pain area
                 </p>
 
-                <h3 className='mt-3 text-2xl font-bold text-slate-900 group-hover:text-blue-700'>
+                <h3 className='mt-3 text-2xl font-bold tracking-[-0.04em] text-slate-900 group-hover:text-blue-700'>
                   {complaint.title}
                 </h3>
 

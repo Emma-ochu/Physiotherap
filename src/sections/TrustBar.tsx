@@ -26,7 +26,7 @@ const TrustBar = () => {
   return (
     <section className='bg-white py-6 md:py-10'>
       <Container>
-        <div className='overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_35px_rgba(15,23,42,0.04)]'>
+        <div className='overflow-hidden rounded-[30px] border border-slate-200 bg-gradient-to-b from-white to-slate-50 shadow-[0_24px_50px_rgba(15,23,42,0.06)]'>
           <div className='grid gap-0 md:grid-cols-3'>
             {trustItems.map((item) => {
               const Icon = item.icon;

@@ -58,7 +58,7 @@ const Testimonials = () => {
             Testimonials
           </span>
 
-          <h2 className="mt-4 text-3xl font-bold text-slate-900 md:text-5xl">
+          <h2 className="mt-4 text-3xl font-black tracking-[-0.04em] text-slate-900 md:text-5xl">
             What Our Patients Say
           </h2>
 
@@ -80,7 +80,7 @@ const Testimonials = () => {
                 delay: index * 0.1,
                 ease: "easeOut",
               }}
-              className="group relative flex flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl md:p-8"
+              className="group relative flex flex-col rounded-[28px] border border-slate-200 bg-slate-50 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl md:p-8"
             >
               {/* Quote icon */}
               <Quote
