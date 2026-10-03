@@ -25,7 +25,7 @@ const PageHero = ({
   title,
   description,
   image = "/images/deines1.png",
-  imageOverlay = "dark",
+  imageOverlay = "subtle",
   actions = [],
 }: PageHeroProps) => (
   <section className='px-3 py-4 md:px-5 md:py-6 lg:px-6'>
@@ -35,7 +35,7 @@ const PageHero = ({
         alt=''
         aria-hidden='true'
         fetchPriority='high'
-        className='absolute inset-0 h-full w-full object-cover'
+        className='absolute inset-0 h-full w-full object-cover object-top'
       />
       <div
         className={`absolute inset-0 ${

@@ -6,14 +6,14 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "instant" });
       return;
     }
 
     const timeout = window.setTimeout(() => {
       document
         .getElementById(decodeURIComponent(hash.slice(1)))
-        ?.scrollIntoView();
+        ?.scrollIntoView({ behavior: "smooth" });
     }, 100);
 
     return () => window.clearTimeout(timeout);

@@ -36,7 +36,7 @@ const Hero = () => {
         <div className='absolute inset-0'>
           <video
             ref={videoRef}
-            className='absolute inset-0 h-full w-full object-cover object-center'
+            className='absolute inset-0 h-full w-full object-cover object-top lg:object-contain lg:object-right'
             autoPlay
             muted
             loop

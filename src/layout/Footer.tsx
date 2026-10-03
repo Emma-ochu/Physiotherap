@@ -132,8 +132,8 @@ const Footer = () => {
             </h3>
 
             <ul className='space-y-2 text-sm text-slate-400'>
-              <li className='flex justify-between gap-4'><span>Mon – Fri</span><span className='text-slate-300'>8am – 6pm</span></li>
-              <li className='flex justify-between gap-4'><span>Saturday</span><span className='text-slate-300'>9am – 4pm</span></li>
+              <li className='flex justify-between gap-4'><span>Mon – Fri</span><span className='text-slate-300'>10am – 6:30pm</span></li>
+              <li className='flex justify-between gap-4'><span>Saturday</span><span className='text-slate-300'>10am – 3pm</span></li>
               <li className='flex justify-between gap-4'><span>Sunday</span><span className='text-slate-300'>Closed</span></li>
             </ul>
 

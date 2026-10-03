@@ -19,8 +19,8 @@ const InteractiveCursor = () => {
   useEffect(() => {
     const onPointerMove = (event: PointerEvent) => {
       if (event.pointerType !== "mouse") return;
-      x.set(event.clientX - 36);
-      y.set(event.clientY - 36);
+      x.set(event.clientX - 22);
+      y.set(event.clientY - 22);
     };
 
     const onPointerOver = (event: PointerEvent) => {
@@ -63,14 +63,14 @@ const InteractiveCursor = () => {
     <motion.div
       aria-hidden='true'
       data-interactive-cursor
-      className='pointer-events-none fixed left-0 top-0 z-[100] hidden h-[72px] w-[72px] items-center justify-center rounded-full bg-blue-700 text-[10px] font-bold uppercase tracking-[0.14em] text-white shadow-[0_8px_30px_rgba(15,23,42,0.25)] [@media(hover:hover)_and_(pointer:fine)]:flex'
+      className='pointer-events-none fixed left-0 top-0 z-[100] hidden h-11 w-11 items-center justify-center rounded-full bg-blue-700/85 text-[8px] font-bold uppercase tracking-[0.1em] text-white shadow-[0_4px_14px_rgba(15,23,42,0.18)] backdrop-blur-sm [@media(hover:hover)_and_(pointer:fine)]:flex'
       style={{ x, y }}
       animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.65 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
     >
-      <span className='flex flex-col items-center gap-1'>
+      <span className='flex flex-col items-center gap-0.5'>
         {label}
-        <ArrowRight className='h-4 w-4' />
+        <ArrowRight className='h-3 w-3' />
       </span>
     </motion.div>
   );
