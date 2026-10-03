@@ -1,21 +1,57 @@
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
-import { services } from "./Services/servicesData";
+import {
+  serviceImages,
+  services,
+  type Service,
+} from "./Services/servicesData";
+
+type ServiceImageProps = {
+  service: Service;
+  image: string;
+  isReversed: boolean;
+};
+
+const ServiceImage = ({ service, image, isReversed }: ServiceImageProps) => {
+  return (
+    <Link
+      to={`/services/${service.slug}`}
+      aria-label={`View ${service.title}`}
+      data-cursor='View'
+      className={`group/image relative block aspect-[4/3] overflow-hidden focus-visible:outline-4 focus-visible:outline-offset-[-4px] focus-visible:outline-blue-400 sm:aspect-[16/10] md:aspect-auto md:min-h-[420px] [@media(hover:hover)_and_(pointer:fine)]:cursor-none ${
+        isReversed ? "lg:order-2" : ""
+      }`}
+    >
+      <motion.img
+        src={image}
+        alt=''
+        loading='lazy'
+        decoding='async'
+        className='absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover/image:scale-110'
+      />
+
+      <div className='absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/25 to-transparent' />
+      <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.32),transparent_40%)] opacity-0 transition-opacity duration-500 group-hover/image:opacity-100' />
+      <div className='absolute -left-[20%] top-0 h-full w-1/2 rotate-12 bg-white/15 blur-2xl transition-transform duration-700 group-hover/image:translate-x-[260%]' />
+
+      <div className='absolute bottom-0 left-0 right-0 p-6 transition-transform duration-500 group-hover/image:-translate-y-2 md:p-8'>
+        <span className='inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-blue-100 backdrop-blur-sm'>
+          {service.number}
+        </span>
+        <p className='mt-4 text-2xl font-bold text-white md:text-3xl'>
+          {service.title}
+        </p>
+      </div>
+
+    </Link>
+  );
+};
 
 const FeaturedServicesDetail = () => {
   // Show only first 4 services for home page (featured ones)
   const featuredServices = services.slice(0, 4);
-
-  const serviceImages: Record<string, string> = {
-    musculoskeletal: "/images/musculoskeletal.jpg",
-    sports: "/images/sports-physiotherapy.jpg",
-    "pelvic-health": "/images/pelvic-health.jpg",
-    "orthopaedic-rehabilitation": "/images/orthopaedic-rehabilitation.jpg",
-    "neurological-rehabilitation": "/images/physio-2.jpg",
-    "functional-specialist-rehabilitation": "/images/physio-3.jpg",
-    "mobile-exercise-rehabilitation": "/images/training.jpg",
-  };
 
   return (
     <section className='bg-slate-50 py-20 md:py-28'>
@@ -36,9 +72,11 @@ const FeaturedServicesDetail = () => {
 
         <div className='space-y-8 md:space-y-10'>
           {featuredServices.map((service, index) => (
-            <article
+            <motion.article
               key={service.slug}
-              className='overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(15,23,42,0.10)]'
+              whileHover={{ y: -12, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              className='group cursor-pointer overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.06)]'
             >
               <div
                 className={`grid gap-0 ${
@@ -47,29 +85,11 @@ const FeaturedServicesDetail = () => {
                   : "lg:grid-cols-[0.85fr_1.15fr]"
                 }`}
               >
-                <div
-                  className={`relative min-h-[280px] overflow-hidden md:min-h-[420px] ${
-                    index % 2 === 1 ? "lg:order-2" : ""
-                  }`}
-                >
-                  <img
-                    src={serviceImages[service.slug] ?? "/images/deines.jpg"}
-                    alt={service.title}
-                    loading='lazy'
-                    decoding='async'
-                    className='h-full w-full object-cover'
-                  />
-                  <div className='absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-950/10 to-transparent' />
-
-                  <div className='absolute bottom-0 left-0 right-0 p-6 md:p-8'>
-                    <span className='inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-blue-100 backdrop-blur-sm'>
-                      {service.number}
-                    </span>
-                    <p className='mt-4 text-2xl font-bold text-white md:text-3xl'>
-                      {service.title}
-                    </p>
-                  </div>
-                </div>
+                <ServiceImage
+                  service={service}
+                  image={serviceImages[service.slug] ?? "/images/deines.jpg"}
+                  isReversed={index % 2 === 1}
+                />
 
                 <div
                   className={`flex flex-col justify-center p-7 md:p-10 ${
@@ -121,7 +141,7 @@ const FeaturedServicesDetail = () => {
                   </Link>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 

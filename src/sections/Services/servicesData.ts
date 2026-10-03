@@ -372,3 +372,13 @@ export const services: Service[] = [
     ],
   },
 ];
+
+export const serviceImages: Record<string, string> = {
+  musculoskeletal: "/images/musculoskeletal.jpg",
+  sports: "/images/sports-physiotherapy.jpg",
+  "pelvic-health": "/images/pelvic-health.jpg",
+  "orthopaedic-rehabilitation": "/images/orthopaedic-rehabilitation.jpg",
+  "neurological-rehabilitation": "/images/neurological-rehabilitation.svg",
+  "functional-specialist-rehabilitation": "/images/functional-rehabilitation.svg",
+  "mobile-exercise-rehabilitation": "/images/training.jpg",
+};

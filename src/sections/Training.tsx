@@ -8,6 +8,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { WHATSAPP_TRAINING } from "../lib/whatsapp";
+import PageHero from "../components/PageHero";
 
 const requirements = [
   "SSCE Certificate",
@@ -45,39 +46,27 @@ const benefits = [
 
 const Training = () => {
   return (
-    <section id='training' className='bg-slate-50 py-10 md:py-20'>
-      <Container>
-        <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]'>
-          <div className='grid items-center gap-0 lg:grid-cols-2'>
-            <div className='relative min-h-[360px] overflow-hidden bg-slate-950 sm:min-h-[440px]'>
-              <img
-                src='/images/training.png'
-                alt='Home Care Assistant Training at DE-INES'
-                className='absolute inset-0 h-full w-full object-cover object-top'
-              />
-              <div className='absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/15 to-slate-950/5' />
-
-              <div className='relative z-10 flex min-h-[360px] items-end p-6 sm:min-h-[440px] sm:p-10 md:p-12'>
-                <div className='max-w-md text-white'>
-                  <span className='inline-flex items-center rounded-full border border-white/20 bg-slate-950/45 px-4 py-2 text-xs font-semibold text-blue-100 backdrop-blur-sm sm:text-sm'>
-                    DE-INES Training Program
-                  </span>
-                  <h1 className='mt-4 text-3xl font-bold leading-[1.08] tracking-tight sm:mt-5 sm:text-5xl'>
-                    Professional Home Care Assistant Training
-                  </h1>
-                </div>
-              </div>
-            </div>
-
-            <div className='p-6 sm:p-8 md:p-12'>
+    <>
+      <PageHero
+        eyebrow='DE-INES Training Program'
+        title='Professional Home Care Assistant Training'
+        description='Build practical healthcare skills through structured classroom learning, hands-on sessions, and professional supervision with DE-INES Physiotherapy and Sports Consults.'
+        image='/images/training.png'
+        actions={[
+          { label: "Apply for Training", href: WHATSAPP_TRAINING },
+          {
+            label: "Program Benefits",
+            to: "#training-benefits",
+            secondary: true,
+          },
+        ]}
+      />
+      <section id='training' className='bg-slate-50 py-10 md:py-20'>
+        <Container>
+          <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]'>
+            <div className='mx-auto max-w-4xl p-6 sm:p-8 md:p-12'>
               <p className='text-sm font-bold uppercase tracking-[0.18em] text-blue-700'>
                 Program Information
-              </p>
-
-              <p className='mt-4 text-base leading-7 text-slate-600 md:mt-6 md:text-lg md:leading-8'>
-                Build practical healthcare skills through structured classroom
-                learning, hands-on sessions, and professional supervision with
-                DE-INES Physiotherapy and Sports Consults.
               </p>
 
               <ul className='mt-6 grid gap-3 sm:grid-cols-2 md:mt-8 md:gap-4'>
@@ -112,11 +101,10 @@ const Training = () => {
                   Learn More
                 </a>
               </div>
-            </div>
           </div>
-        </div>
+          </div>
 
-        {/* ─────────────────────────────
+          {/* ─────────────────────────────
             Benefits
         ───────────────────────────── */}
         <div id='training-benefits' className='mt-16 scroll-mt-28 md:mt-24'>
@@ -184,9 +172,10 @@ const Training = () => {
           >
             Enquire About Admission
           </a>
-        </div>
-      </Container>
-    </section>
+          </div>
+        </Container>
+      </section>
+    </>
   );
 };
 

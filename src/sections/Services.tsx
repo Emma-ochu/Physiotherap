@@ -2,45 +2,17 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import { services } from "./Services/servicesData";
+import PageHero from "../components/PageHero";
 
 const Services = () => {
   return (
     <>
-      {/* Page Hero */}
-      <section
-        id='services'
-        className='relative overflow-hidden bg-slate-950 py-24 md:py-32'
-      >
-        <div className='absolute inset-0 bg-blue-950/30' />
-
-        <Container>
-          <div className='relative z-10 mx-auto max-w-4xl text-center text-white'>
-            <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-300'>
-              Clinical Physiotherapy Services
-            </p>
-
-            <h1 className='mt-6 text-4xl font-bold leading-tight md:text-6xl'>
-              Treatment, Rehabilitation,
-              <br className='hidden md:block' />
-              Exercise & Education
-            </h1>
-
-            <p className='mx-auto mt-7 max-w-3xl text-base leading-7 text-white/80 md:text-lg md:leading-8'>
-              Professional physiotherapy care focused on helping you reduce
-              pain, restore movement, build strength, and return to the
-              activities that matter to you.
-            </p>
-
-            <Link
-              to='/contact#contact-form'
-              className='mt-9 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800'
-            >
-              Contact Us
-              <ArrowRight className='h-4 w-4' />
-            </Link>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow='Clinical Physiotherapy Services'
+        title='Treatment, Rehabilitation, Exercise & Education'
+        description='Professional physiotherapy care focused on helping you reduce pain, restore movement, build strength, and return to the activities that matter to you.'
+        actions={[{ label: "Contact Us", to: "/contact#contact-form" }]}
+      />
 
       {/* Introduction */}
       <section className='py-20 md:py-28'>

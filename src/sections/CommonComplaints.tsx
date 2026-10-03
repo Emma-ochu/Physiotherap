@@ -72,7 +72,10 @@ const CommonComplaints = () => {
               to='/what-we-treat'
               className='group overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_22px_55px_rgba(15,23,42,0.10)]'
             >
-              <div className='relative h-60 overflow-hidden'>
+              <div
+                data-cursor='View'
+                className='relative aspect-[4/3] overflow-hidden [@media(hover:hover)_and_(pointer:fine)]:cursor-none md:aspect-[16/10]'
+              >
                 <img
                   src={complaint.image}
                   alt={complaint.title}

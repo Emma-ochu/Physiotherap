@@ -85,8 +85,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className='sticky top-0 z-50'>
-      <div className='hidden bg-[#0a1d3b] md:block'>
+    <header className='sticky top-0 z-50 px-3 md:px-5 lg:px-6'>
+      <div className='mx-auto hidden max-w-[1620px] overflow-hidden rounded-t-[24px] bg-[#0b548a] md:block'>
         <Container>
           <div className='flex h-11 items-center justify-between'>
             <span className='text-xs font-medium text-slate-300'>
@@ -128,7 +128,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className={`border-b border-slate-200/80 bg-white/95 transition-all duration-300 ${
+        className={`mx-auto max-w-[1620px] rounded-t-[24px] border-x border-b border-slate-200/80 bg-white/95 transition-all duration-300 md:rounded-t-none md:rounded-b-[24px] ${
           scrolled ?
             "shadow-[0_10px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl"
           : "shadow-[0_1px_0_rgba(15,23,42,0.04)]"

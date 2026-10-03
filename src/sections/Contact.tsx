@@ -1,4 +1,5 @@
 import Container from "../components/Container";
+import PageHero from "../components/PageHero";
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import {
   BRANCH_OFFICE,
@@ -40,11 +41,21 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section
-      id='contact'
-      aria-labelledby='contact-heading'
-      className='bg-slate-50 py-20 md:py-28'
-    >
+    <>
+      <PageHero
+        eyebrow='DE-INES Physiotherapy'
+        title='Let’s Get You Moving Again'
+        description='Contact our team to book an appointment, ask about our services, or start a conversation about your recovery.'
+        actions={[
+          { label: "Book Appointment", to: "/contact#contact-form" },
+          { label: "Explore Services", to: "/services", secondary: true },
+        ]}
+      />
+      <section
+        id='contact'
+        aria-labelledby='contact-heading'
+        className='bg-slate-50 py-20 md:py-28'
+      >
       <Container>
         <div className='mx-auto max-w-3xl text-center'>
           <span className='text-sm font-bold uppercase tracking-[0.2em] text-blue-700'>
@@ -174,7 +185,7 @@ const Contact = () => {
               {HEAD_OFFICE}
             </p>
           </div>
-          <div className='relative aspect-[16/9] w-full bg-slate-100 sm:aspect-[21/9]'>
+          <div className='relative aspect-[4/3] w-full bg-slate-100 md:aspect-[16/9] lg:aspect-[21/9]'>
             <iframe
               title='DE-INES Physiotherapy Head Office location'
               src={MAPS_EMBED}
@@ -197,7 +208,8 @@ const Contact = () => {
           </div>
         </div>
       </Container>
-    </section>
+      </section>
+    </>
   );
 };
 

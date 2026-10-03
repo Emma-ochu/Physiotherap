@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="room" x1="116" y1="34" x2="1080" y2="786" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF6FA"/>
+      <stop offset="1" stop-color="#D6E9EF"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="600" y1="514" x2="600" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E1EBE9"/>
+      <stop offset="1" stop-color="#C5D9D6"/>
+    </linearGradient>
+    <linearGradient id="patientTop" x1="495" y1="241" x2="646" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B7592"/>
+      <stop offset="1" stop-color="#244E6B"/>
+    </linearGradient>
+    <linearGradient id="therapistTop" x1="794" y1="205" x2="960" y2="491" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#36A0A0"/>
+      <stop offset="1" stop-color="#197176"/>
+    </linearGradient>
+    <filter id="shadow" x="110" y="107" width="1000" height="655" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" fill="url(#room)"/>
+  <path d="M0 540h1200v260H0z" fill="url(#floor)"/>
+  <path d="M0 540h1200" stroke="#B8D2D0" stroke-width="5"/>
+  <path d="M80 88h315v322H80z" fill="#D3EBF1"/>
+  <path d="M101 109h273v280H101z" fill="#B8E0E8"/>
+  <path d="M101 244h273M237 109v280" stroke="#F8FCFC" stroke-width="12"/>
+  <rect x="862" y="97" width="268" height="16" rx="8" fill="#91B9C0"/>
+  <rect x="876" y="113" width="13" height="214" rx="6.5" fill="#91B9C0"/>
+  <rect x="1103" y="113" width="13" height="214" rx="6.5" fill="#91B9C0"/>
+  <rect x="899" y="135" width="194" height="166" rx="12" fill="#F9FCFB"/>
+  <path d="M923 262h146M940 262v-50c0-24 19-43 43-43s43 19 43 43v50" stroke="#C4DEE0" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="622" cy="701" rx="410" ry="34" fill="#708E88" opacity=".22" filter="url(#shadow)"/>
+
+  <path d="M406 293c-3-68 32-112 84-116 57-4 89 39 85 99l-5 73-156 3-8-59Z" fill="#382D2A"/>
+  <path d="M427 211c20-35 58-49 94-35 25 10 43 35 41 65-2 29-12 54-30 70l-59 4c-31-21-55-66-46-104Z" fill="#A4694E"/>
+  <path d="M422 229c-15-37-2-72 27-92 31-22 76-16 104 14l-3 25c-34-17-70-13-99 5-12 8-22 22-29 48Z" fill="#382D2A"/>
+  <path d="M477 317c-4 25-8 47-7 70l99 10 8-77-100-3Z" fill="#965E47"/>
+  <path d="M411 354c28-18 60-24 91-16 35 9 60 33 69 69l29 135-216 18-34-135c-9-34 25-59 61-71Z" fill="url(#patientTop)"/>
+  <path d="m400 499 173 8 19 156-83 4-32-107-35 107-87-7 45-161Z" fill="#425969"/>
+  <path d="m478 660 83 1 23 27c7 8 1 20-9 20h-84c-21 0-31-30-13-48Z" fill="#33434B"/>
+  <path d="m393 661 77 8 4 20c2 10-6 18-16 17l-79-7c-20-2-21-32 14-38Z" fill="#33434B"/>
+  <path d="M364 406 296 470c-13 12-12 32 2 43l15 11c11 9 27 8 37-2l79-77-65-39Z" fill="#A4694E"/>
+  <path d="m295 462-37 7c-14 3-21 19-13 31l14 20c7 11 21 15 33 9l34-17-31-50Z" fill="#A4694E"/>
+  <path d="M313 480c-1-39-4-77-14-113" stroke="#E0AB8A" stroke-width="12" stroke-linecap="round"/>
+  <path d="M303 368c-4-17-11-32-20-46" stroke="#E0AB8A" stroke-width="12" stroke-linecap="round"/>
+  <path d="m576 385 74 57" stroke="#E0AB8A" stroke-width="14" stroke-linecap="round"/>
+  <path d="M645 439c10 17 14 35 11 53" stroke="#E0AB8A" stroke-width="13" stroke-linecap="round"/>
+
+  <path d="M747 241c1-47 31-78 72-76 44 2 65 39 59 81l-7 46-115-3-9-48Z" fill="#282C31"/>
+  <path d="M762 217c14-31 47-44 78-31 23 10 37 35 33 64-4 28-15 50-32 62l-53-4c-24-23-38-60-26-91Z" fill="#B67859"/>
+  <path d="M756 226c-11-37 6-72 35-87 33-17 74-5 95 27l-3 24c-31-19-65-16-95 5-11 7-22 19-32 31Z" fill="#282C31"/>
+  <path d="M787 302c-3 22-6 41-4 61l88 5 6-58-90-8Z" fill="#A96C50"/>
+  <path d="M748 347c23-14 53-20 82-12 33 9 55 30 64 63l30 129-181 7-43-111c-12-33 15-60 48-76Z" fill="url(#therapistTop)"/>
+  <path d="m764 500 118 3 7 165h-91l-34-168Z" fill="#2C4854"/>
+  <path d="M795 664h93l17 27c5 9-1 19-11 19h-98c-20 0-22-31-1-46Z" fill="#293A42"/>
+  <path d="m749 387-86 72c-14 12-16 33-4 47l13 15c10 12 29 14 42 4l91-72-56-66Z" fill="#B67859"/>
+  <path d="M658 465c-21 16-44 24-71 22" stroke="#E2B08F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M698 515c-18 20-34 39-49 58" stroke="#E2B08F" stroke-width="14" stroke-linecap="round"/>
+  <path d="m903 391 57 73" stroke="#E2B08F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M957 465c2 21 9 39 23 53" stroke="#E2B08F" stroke-width="13" stroke-linecap="round"/>
+
+  <path d="M220 538h150M242 538v104m108-104v104" stroke="#7F9B9C" stroke-width="10" stroke-linecap="round"/>
+  <path d="M228 642h134" stroke="#638286" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="244" cy="665" r="13" fill="#5F787A"/>
+  <circle cx="349" cy="665" r="13" fill="#5F787A"/>
+  <path d="M277 508c9-18 21-29 38-34" stroke="#87B5B7" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="321" cy="464" r="9" fill="#D29A5D"/>
+  <circle cx="340" cy="450" r="9" fill="#E7BE77"/>
+
+  <path d="M961 548c22 8 43 24 60 46" stroke="#5E9798" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="1038" cy="534" r="29" fill="#FFFFFF" opacity=".62"/>
+  <path d="M1026 534h24m-12-12v24" stroke="#4B99A4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M928 369h125" stroke="#B6D0D1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="959" cy="345" r="14" fill="#E7B679"/>
+  <circle cx="1019" cy="345" r="14" fill="#7AB9BF"/>
+</svg>

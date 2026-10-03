@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import PageHero from "../components/PageHero";
 
 const values = [
   {
@@ -130,59 +131,15 @@ const teamCategories = [
 const About = () => {
   return (
     <main className='bg-white'>
-      {/* ===== HERO ===== */}
-      <section className='relative min-h-[620px] overflow-hidden bg-slate-950'>
-        <div className='absolute inset-y-0 right-0 w-full md:w-[62%]'>
-          <img
-            src='/images/deines1.png'
-            alt='DE-INES physiotherapy clinic'
-            className='h-full w-full object-cover object-center md:object-right'
-          />
-        </div>
-        <div className='absolute inset-0 bg-slate-950/75' />
-        <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25' />
-        <Container>
-          <div className='relative z-10 flex min-h-[620px] items-center'>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className='max-w-3xl py-20 text-white md:py-24'
-            >
-              <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-200'>
-                Our Story
-              </p>
-              <h1 className='mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl'>
-                About DE-INES
-              </h1>
-              <p className='mt-7 max-w-3xl text-base leading-8 text-slate-200 md:text-lg md:leading-9'>
-                DE-INES Physiotherapy was founded on a simple belief: that
-                everyone deserves access to high-quality, compassionate
-                physiotherapy care. We combine thorough assessment,
-                evidence-based treatment, and genuine partnership to help you
-                recover stronger, move better, and return to the activities that
-                matter most.
-              </p>
-              <div className='mt-10 flex flex-wrap gap-4'>
-                <Link
-                  to='/what-we-treat'
-                  className='inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800'
-                >
-                  What We Treat
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-                <Link
-                  to='/services'
-                  className='inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20'
-                >
-                  Services
-                  <ArrowRight className='h-4 w-4' />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow='Our Story'
+        title='About DE-INES'
+        description='DE-INES Physiotherapy was founded on a simple belief: that everyone deserves access to high-quality, compassionate physiotherapy care. We combine thorough assessment, evidence-based treatment, and genuine partnership to help you recover stronger, move better, and return to the activities that matter most.'
+        actions={[
+          { label: "What We Treat", to: "/what-we-treat" },
+          { label: "Services", to: "/services", secondary: true },
+        ]}
+      />
 
       <section className='bg-slate-50 py-7'>
         <Container>
@@ -273,12 +230,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className='h-96 overflow-hidden rounded-3xl lg:h-[460px]'
+              className='aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[16/10]'
             >
               <img
                 src='/images/deines1.png'
                 alt='DE-INES Physiotherapy team at the clinic'
-                className='h-full w-full object-contain object-center lg:object-cover'
+                className='h-full w-full object-cover object-center'
               />
             </motion.div>
 
@@ -343,7 +300,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className='h-[420px] overflow-hidden rounded-3xl lg:h-[520px]'
+              className='aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[16/10]'
             >
               <img
                 src='/images/secretary-2.jpg'
@@ -364,12 +321,12 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className='h-[420px] overflow-hidden rounded-3xl lg:h-[500px]'
+              className='aspect-[4/3] overflow-hidden rounded-3xl lg:aspect-[16/10]'
             >
               <img
                 src='/images/massage.jpg'
                 alt='DE-INES Physiotherapy team'
-                className='h-full w-full object-fill'
+                className='h-full w-full object-cover'
               />
             </motion.div>
 
@@ -456,7 +413,7 @@ const About = () => {
                       className='overflow-hidden rounded-3xl bg-white shadow-lg'
                     >
                       <div className='grid lg:grid-cols-[0.9fr_1.1fr]'>
-                        <div className='relative h-[420px] overflow-hidden lg:h-aut'>
+                        <div className='relative aspect-[4/5] overflow-hidden lg:aspect-auto lg:min-h-[520px]'>
                           <img
                             src={members[0].image}
                             alt={members[0].name}
@@ -516,7 +473,7 @@ const About = () => {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           className='group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg'
                         >
-                          <div className='relative h-[430px] overflow-hidden sm:h-[460px] lg:h-[430px]'>
+                          <div className='relative aspect-[4/5] overflow-hidden'>
                             <img
                               src={member.image}
                               alt={member.name}

@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { motion } from "framer-motion";
 import Container from "../components/Container";
 import { Link } from "react-router-dom";
+import PageHero from "../components/PageHero";
 
 const slideFromLeft = {
   hidden: { opacity: 0, x: -80 },
@@ -65,59 +66,19 @@ const PatientInformation = () => {
 
   return (
     <>
-      {/* ===== HERO SECTION ===== */}
-      <section className='relative min-h-[620px] overflow-hidden bg-slate-950'>
-        <div className='absolute inset-y-0 right-0 w-full md:w-[62%]'>
-          <img
-            src='/images/deines1.png'
-            alt='DE-INES physiotherapy clinic'
-            className='h-full w-full object-cover object-center md:object-right'
-          />
-        </div>
-
-        <div className='absolute inset-0 bg-slate-950/75' />
-        <div className='absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25' />
-
-        <Container>
-          <div className='relative z-10 flex min-h-[620px] items-center'>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className='max-w-3xl py-20 text-white md:py-24'
-            >
-              <p className='text-sm font-bold uppercase tracking-[0.2em] text-blue-200'>
-                Appointments & Guidelines
-              </p>
-
-              <h1 className='mt-6 text-5xl font-bold leading-tight md:text-6xl lg:text-7xl'>
-                Patient Information
-              </h1>
-
-              <p className='mt-7 max-w-3xl text-base leading-8 text-slate-200 md:text-lg md:leading-9'>
-                Everything you need to know before, during, and after your
-                physiotherapy appointment.
-              </p>
-
-              <div className='mt-10 flex flex-wrap gap-4'>
-                <Link
-                  to='/contact#contact-form'
-                  className='inline-flex items-center gap-2 rounded-full bg-blue-700 px-7 py-4 font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-800'
-                >
-                  Book Appointment
-                </Link>
-
-                <Link
-                  to='/faq'
-                  className='inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-7 py-4 font-bold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/20'
-                >
-                  Frequently Asked Questions
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow='Appointments & Guidelines'
+        title='Patient Information'
+        description='Everything you need to know before, during, and after your physiotherapy appointment.'
+        actions={[
+          { label: "Book Appointment", to: "/contact#contact-form" },
+          {
+            label: "Frequently Asked Questions",
+            to: "/faq",
+            secondary: true,
+          },
+        ]}
+      />
 
       <section className='bg-slate-50 py-7'>
         <Container>

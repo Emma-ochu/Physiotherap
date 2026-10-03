@@ -32,15 +32,33 @@ const Hero = () => {
 
   return (
     <section className='px-3 py-4 md:px-5 md:py-6 lg:px-6'>
-      <div className='relative mx-auto max-w-[1620px] overflow-hidden rounded-[28px] bg-[#eef2f7] shadow-[0_28px_80px_rgba(15,23,42,0.12)]'>
-        <div className='grid min-h-[640px] items-center lg:grid-cols-[1.05fr_1.1fr]'>
-          <div className='relative z-10 flex items-center px-6 py-10 sm:px-10 md:px-12 lg:px-16 lg:py-14'>
-            <div className='max-w-[650px]'>
+      <div className='relative mx-auto flex min-h-[min(72svh,520px)] max-w-[1620px] items-center overflow-hidden rounded-[28px] bg-slate-950 shadow-[0_28px_80px_rgba(15,23,42,0.18)] md:min-h-[560px] lg:min-h-[640px]'>
+        <div className='absolute inset-0'>
+          <video
+            ref={videoRef}
+            className='absolute inset-0 h-full w-full object-cover object-center'
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload='metadata'
+            poster='/images/deines.jpg'
+          >
+            <source src='/gallery/clinic-video.mp4' type='video/mp4' />
+            Your browser does not support the video tag.
+          </video>
+          <div className='absolute inset-0 bg-slate-950/35' />
+          <div className='absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-slate-950/5' />
+          <div className='absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-950/45 to-transparent' />
+        </div>
+
+        <div className='relative z-10 w-full px-6 py-16 sm:px-10 md:px-14 lg:px-20'>
+            <div className='max-w-[760px] text-white'>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className='text-[11px] font-semibold uppercase tracking-[0.22em] text-blue-700 md:text-sm'
+                className='text-[11px] font-bold uppercase tracking-[0.22em] text-blue-200 md:text-sm'
               >
                 Benin City’s trusted physiotherapy & rehabilitation clinic
               </motion.p>
@@ -49,7 +67,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className='mt-5 text-4xl font-black leading-[0.96] tracking-[-0.06em] text-slate-900 drop-shadow-[0_10px_24px_rgba(15,23,42,0.08)] sm:text-5xl md:mt-6 md:text-6xl lg:text-[5rem]'
+                className='mt-5 text-4xl font-black leading-[0.98] tracking-[-0.06em] text-white drop-shadow-[0_10px_24px_rgba(15,23,42,0.18)] sm:text-5xl md:mt-6 md:text-6xl lg:text-[5rem]'
               >
                 We help you
                 <br />
@@ -62,7 +80,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className='mt-5 max-w-[590px] text-base font-medium leading-7 text-slate-600 sm:text-lg md:mt-7 md:text-xl md:leading-8'
+                className='mt-5 max-w-[590px] text-base font-medium leading-7 text-white/85 sm:text-lg md:mt-7 md:text-xl md:leading-8'
               >
                 Professional physiotherapy care for pain, injury, sports
                 rehabilitation and lasting recovery.
@@ -90,27 +108,6 @@ const Hero = () => {
                 </Link>
               </motion.div>
             </div>
-          </div>
-
-          <div className='relative order-first h-[360px] overflow-hidden bg-slate-200 lg:order-none lg:h-full lg:min-h-[640px]'>
-            <video
-              ref={videoRef}
-              className='absolute inset-0 h-full w-full object-cover object-center'
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload='metadata'
-              poster='/images/deines.jpg'
-            >
-              <source src='/gallery/clinic-video.mp4' type='video/mp4' />
-              Your browser does not support the video tag.
-            </video>
-
-            <div className='absolute inset-0 bg-slate-950/20' />
-            <div className='absolute inset-0 bg-gradient-to-l from-slate-950/20 via-transparent to-transparent' />
-            <div className='absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#eef2f7] to-transparent' />
-          </div>
         </div>
       </div>
     </section>

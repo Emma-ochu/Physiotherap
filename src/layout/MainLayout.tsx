@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { WHATSAPP_BOOK } from "../lib/whatsapp";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import InteractiveCursor from "../components/InteractiveCursor";
 
 const MainLayout = () => {
   return (
@@ -10,6 +11,7 @@ const MainLayout = () => {
       <Navbar />
       <Outlet />
       <Footer />
+      <InteractiveCursor />
 
       <a
         href={WHATSAPP_BOOK}

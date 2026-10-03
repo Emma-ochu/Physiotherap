@@ -1,7 +1,8 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../../components/Container";
-import type { Service } from "./servicesData";
+import PageHero from "../../components/PageHero";
+import { serviceImages, type Service } from "./servicesData";
 
 interface ServicesDetailsProps {
   service: Service;
@@ -10,38 +11,22 @@ interface ServicesDetailsProps {
 const ServicesDetails = ({ service }: ServicesDetailsProps) => {
   return (
     <>
-      {/* Hero Section */}
-      <section className='relative overflow-hidden bg-slate-950 py-24 md:py-32'>
-        <div className='absolute inset-0 bg-blue-950/30' />
-
-        <Container>
-          <div className='relative z-10 mx-auto max-w-4xl'>
-            <Link
-              to='/services'
-              className='inline-flex items-center gap-2 text-sm font-semibold text-blue-300 transition hover:text-blue-200'
-            >
-              <ArrowRight className='h-4 w-4 rotate-180' />
-              Back to Services
-            </Link>
-
-            <h1 className='mt-8 text-4xl font-bold leading-tight text-white md:text-6xl'>
-              {service.title}
-            </h1>
-
-            <p className='mt-6 max-w-2xl text-lg leading-8 text-white/80'>
-              {service.heroDescription}
-            </p>
-
-            <Link
-              to='/contact#contact-form'
-              className='mt-8 inline-flex items-center gap-2 rounded-full bg-blue-700 px-8 py-4 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-blue-800'
-            >
-              Book an Appointment
-              <ArrowRight className='h-4 w-4' />
-            </Link>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow={`Physiotherapy Service ${service.number}`}
+        title={service.title}
+        description={service.heroDescription}
+        image={serviceImages[service.slug] ?? "/images/deines1.png"}
+        imageOverlay={
+          service.slug === "neurological-rehabilitation" ||
+          service.slug === "functional-specialist-rehabilitation" ?
+            "subtle"
+          : "dark"
+        }
+        actions={[
+          { label: "Book an Appointment", to: "/contact#contact-form" },
+          { label: "Back to Services", to: "/services", secondary: true },
+        ]}
+      />
 
       {/* Overview */}
       <section className='py-20 md:py-28'>

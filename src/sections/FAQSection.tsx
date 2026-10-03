@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import PageHero from "../components/PageHero";
 
 interface FAQItem {
   id: string;
@@ -144,21 +145,12 @@ const FAQSection = () => {
 
   return (
     <>
-      {/* Hero */}
-      <section className='relative overflow-hidden bg-slate-950 py-24 md:py-32'>
-        <div className='absolute inset-0 bg-blue-950/30' />
-        <Container>
-          <div className='relative z-10 mx-auto max-w-4xl text-center text-white'>
-            <h1 className='text-4xl font-bold leading-tight md:text-6xl'>
-              Frequently Asked Questions
-            </h1>
-            <p className='mt-6 text-lg leading-8 text-white/80'>
-              Find answers to common questions about our services, treatment,
-              and how to get started
-            </p>
-          </div>
-        </Container>
-      </section>
+      <PageHero
+        eyebrow='Patient Support'
+        title='Frequently Asked Questions'
+        description='Find answers to common questions about our services, treatment, and how to get started.'
+        actions={[{ label: "Contact Our Team", to: "/contact#contact-form" }]}
+      />
 
       {/* FAQ Sections */}
       <section className='py-20 md:py-28'>

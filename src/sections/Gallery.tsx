@@ -40,12 +40,12 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <div
               key={`${image.alt}-${index}`}
-              className='group overflow-hidden rounded-3xl bg-white shadow-sm'
+              className='group aspect-[4/3] overflow-hidden rounded-3xl bg-white shadow-sm md:aspect-[16/10]'
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className='h-72 w-full object-cover transition duration-700 group-hover:scale-105'
+                className='h-full w-full object-cover transition duration-700 group-hover:scale-105'
               />
             </div>
           ))}

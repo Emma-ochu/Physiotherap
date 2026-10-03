@@ -58,7 +58,10 @@ const ServicesPreview = () => {
               to="/services"
               className="group overflow-hidden rounded-3xl bg-slate-950 shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-2xl"
             >
-              <div className="relative aspect-[16/9] overflow-hidden">
+              <div
+                data-cursor="Explore"
+                className="relative aspect-[4/3] overflow-hidden [@media(hover:hover)_and_(pointer:fine)]:cursor-none md:aspect-[16/9]"
+              >
                 <img
                   src={service.image}
                   alt={service.title}
