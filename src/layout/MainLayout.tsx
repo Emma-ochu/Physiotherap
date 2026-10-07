@@ -4,10 +4,12 @@ import { WHATSAPP_BOOK } from "../lib/whatsapp";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import InteractiveCursor from "../components/InteractiveCursor";
+import SEO from "../components/SEO";
 
 const MainLayout = () => {
   return (
     <>
+      <SEO />
       <Navbar />
       <Outlet />
       <Footer />
