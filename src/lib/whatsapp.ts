@@ -16,3 +16,6 @@ export const WHATSAPP_BOOK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
 export const WHATSAPP_TRAINING = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
   "Hello, I am interested in the Home Care Assistant training program at DE-INES.",
 )}`;
+export const WHATSAPP_DIRECTOR = `https://wa.me/2348174636276?text=${encodeURIComponent(
+  "Hello, I would like to speak with the Director of DE-INES Physiotherapy about your services.",
+)}`;

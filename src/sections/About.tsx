@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import PageHero from "../components/PageHero";
+import { WHATSAPP_DIRECTOR } from "../lib/whatsapp";
 
 const values = [
   {
@@ -599,7 +600,7 @@ const About = () => {
                     </p>
                   </div>
                   <a
-                    href='https://wa.me/2348174636276?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20the%20Director%20of%20DE-INES%20Physiotherapy%20about%20your%20services.'
+                    href={WHATSAPP_DIRECTOR}
                     target='_blank'
                     rel='noopener noreferrer'
                     className='mt-8 inline-flex rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white transition hover:bg-blue-800'

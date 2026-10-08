@@ -10,6 +10,7 @@ import {
   Minus,
 } from "lucide-react";
 import Container from "../components/Container";
+import { PHONE_NUMBER, PHONE_DISPLAY } from "../lib/whatsapp";
 
 /* Shared desktop-link classes */
 const linkBase =
@@ -116,11 +117,11 @@ const Navbar = () => {
               </NavLink>
 
               <a
-                href='tel:+2349160803314'
+                href={`tel:${PHONE_NUMBER}`}
                 className='flex items-center gap-1.5 text-xs font-semibold text-white transition hover:text-blue-200'
               >
                 <Phone className='h-3.5 w-3.5' />
-                0916 080 3314
+                {PHONE_DISPLAY}
               </a>
             </div>
           </div>
